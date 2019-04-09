@@ -1,0 +1,214 @@
+body {
+  font-size: 14px !important; }
+
+body:not(.left-menu-open) #right-panel-inner {
+  margin-left: 0px !important; }
+
+.header-links {
+  display: none; }
+
+#mastlogo {
+  background-color: white !important;
+  border: none !important;
+  height: 74px !important;
+  padding: 0px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px !important;
+  display: none !important; }
+  #mastlogo a {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    #mastlogo a img {
+      width: 50% !important; }
+
+#left-panel {
+  display: none !important; }
+
+#right-panel-inner {
+  margin-left: 0px !important; }
+
+#right-panel {
+  margin-top: 100px; }
+
+header#masthead {
+  background-color: white; }
+
+header {
+  z-index: 99999 !important; }
+  header .header-wrap {
+    display: flex;
+    flex-direction: column-reverse; }
+    header .header-wrap .links {
+      padding-bottom: 10px; }
+      header .header-wrap .links ul {
+        display: flex;
+        width: 95%;
+        float: right; }
+        header .header-wrap .links ul li {
+          margin-left: 20px; }
+          header .header-wrap .links ul li:nth-child(1) {
+            margin-left: 0px; }
+    header .header-wrap .header-outher {
+      margin-left: 0px; }
+      header .header-wrap .header-outher .header-inner {
+        padding-left: 0px; }
+        header .header-wrap .header-outher .header-inner .middle-col {
+          display: none !important; }
+        header .header-wrap .header-outher .header-inner .search-form {
+          width: 100% !important; }
+        header .header-wrap .header-outher .header-inner #logo {
+          width: 200px !important;
+          position: relative;
+          display: flex;
+          align-items: center;
+          height: 74px; }
+          header .header-wrap .header-outher .header-inner #logo a {
+            width: 100%;
+            height: 50px;
+            display: block; }
+            header .header-wrap .header-outher .header-inner #logo a img {
+              width: 100%;
+              height: 100%;
+              object-fit: contain; }
+
+.left-col .search-wrap {
+  width: 100% !important; }
+
+button#searchsubmit {
+  float: left; }
+
+.search-wrap input[type="text"] {
+  padding-left: 50px; }
+
+.header-inner {
+  background-color: white !important; }
+
+button#searchsubmit {
+  color: #737373 !important; }
+
+.search-wrap {
+  background-color: white !important; }
+
+.page-view.homepage .first-row {
+  position: relative; }
+  .page-view.homepage .first-row .background {
+    position: absolute;
+    z-index: 9;
+    height: 50vh;
+    width: 100vw;
+    background-image: url("https://xshyfc.com/wp-content/uploads/data/2018/2/20/Weed-Plants-Wallpaperweed-plants-wallpaper-1920x1080-720p-PIC-WPXH350425.jpg"); }
+    .page-view.homepage .first-row .background:after {
+      content: '';
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      opacity: 0.8; }
+    .page-view.homepage .first-row .background .image img {
+      height: 100%;
+      width: 100%; }
+  .page-view.homepage .first-row .content {
+    position: relative;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 99;
+    color: white;
+    width: 85%;
+    margin: 0 auto;
+    text-align: center; }
+    .page-view.homepage .first-row .content h1 {
+      color: white;
+      font-size: 3em; }
+    .page-view.homepage .first-row .content p {
+      color: white;
+      width: 50%;
+      margin: 0 auto;
+      padding-top: 1em;
+      padding-bottom: 1em; }
+    .page-view.homepage .first-row .content .socials i {
+      font-size: 3em;
+      margin-left: 20px;
+      margin-right: 20px; }
+
+.page-view.homepage .second-row {
+  width: 100%;
+  background-color: #e7e7e7;
+  padding-top: 1em;
+  padding-bottom: 1em; }
+  .page-view.homepage .second-row ul {
+    display: flex;
+    justify-content: center; }
+    .page-view.homepage .second-row ul li {
+      margin-left: 2em;
+      margin-right: 2em; }
+      .page-view.homepage .second-row ul li:nth-child(1) {
+        margin-left: 0px; }
+      .page-view.homepage .second-row ul li:nth-last-child(1) {
+        margin-right: 0px; }
+      .page-view.homepage .second-row ul li a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 55px; }
+        .page-view.homepage .second-row ul li a i {
+          color: #57b059;
+          font-size: 2.5em; }
+        .page-view.homepage .second-row ul li a p {
+          color: #57b059; }
+
+.page-view.products {
+  background-color: #e5e5e5;
+  padding-top: 50px;
+  min-height: 100vh; }
+  .page-view.products .panels {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 0 auto; }
+    .page-view.products .panels .location {
+      width: 100%; }
+    .page-view.products .panels .left-panel {
+      width: 25%;
+      background-color: white;
+      min-height: 100vh; }
+    .page-view.products .panels .right-panel {
+      width: 70%;
+      margin-left: 2.5%;
+      position: relative;
+      min-height: 100vh; }
+      .page-view.products .panels .right-panel .loader-wrapper {
+        position: absolute;
+        height: 100%;
+        width: 100%; }
+      .page-view.products .panels .right-panel ul {
+        z-index: 9999;
+        position: relative;
+        background-color: #e5e5e5; }
+        .page-view.products .panels .right-panel ul li.product a {
+          background-color: white;
+          display: flex;
+          border: 1px solid black;
+          margin-bottom: 0.35em; }
+          .page-view.products .panels .right-panel ul li.product a .product-image {
+            width: 200px; }
+            .page-view.products .panels .right-panel ul li.product a .product-image img {
+              width: 100%; }
+          .page-view.products .panels .right-panel ul li.product a .product-info {
+            width: calc(100% - 200px);
+            display: flex;
+            flex-wrap: wrap; }
+            .page-view.products .panels .right-panel ul li.product a .product-info .product-title {
+              width: 100%; }
+            .page-view.products .panels .right-panel ul li.product a .product-info .product-info-under-title {
+              display: flex;
+              width: 100%; }
+              .page-view.products .panels .right-panel ul li.product a .product-info .product-info-under-title .panel {
+                width: 20%; }

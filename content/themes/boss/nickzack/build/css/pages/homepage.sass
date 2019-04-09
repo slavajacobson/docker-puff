@@ -1,0 +1,79 @@
+$introHeight: 50vh
+$green: #57b059
+.page-view.homepage
+	.first-row
+		position: relative
+		.background
+			position: absolute
+			z-index: 9
+			height: $introHeight
+			width: 100vw
+			background-image: url("https://xshyfc.com/wp-content/uploads/data/2018/2/20/Weed-Plants-Wallpaperweed-plants-wallpaper-1920x1080-720p-PIC-WPXH350425.jpg")
+			&:after
+				content: ''
+				position: absolute
+				top: 0px
+				left: 0px
+				width: 100%
+				height: 100%
+				background-color: black
+				opacity: 0.8
+			.image
+				img
+					height: 100%
+					width: 100%
+		.content
+			position: relative
+			height: $introHeight
+			display: flex
+			flex-direction: column
+			justify-content: center
+			z-index: 99
+			color: white
+			width: 85%
+			margin: 0 auto
+			text-align: center
+			h1
+				color: white
+				font-size: 3em
+			p
+				color: white
+				width: 50%
+				margin: 0 auto
+				padding-top: 1em
+				padding-bottom: 1em
+			.socials
+				i
+					font-size: 3em
+					margin-left: 20px
+					margin-right: 20px
+	.second-row
+		width: 100%
+		background-color: #e7e7e7
+		padding-top: 1em
+		padding-bottom: 1em
+		ul
+			display: flex
+			justify-content: center
+			li
+				margin-left: 2em
+				margin-right: 2em
+				&:nth-child(1)
+					margin-left: 0px
+				&:nth-last-child(1)
+					margin-right: 0px
+
+				a
+					display: flex
+					flex-direction: column
+					align-items: center
+					justify-content: center
+					width: 55px
+
+					i
+						color: $green
+						font-size: 2.5em
+					p
+						color: $green
+
+
