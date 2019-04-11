@@ -2,73 +2,15 @@
 $postID = $post -> ID;
 ?>
 <div class = 'page-view single-product'>
-	<h1> Single Product </h1>
-	
 	<!-- REVIEW AVERAGE -->
 	<?php
-	$reviews = get_comments(array('post_id' => $postID));
-	$criticReviews = [];
-	$userReviews = [];
-	//average is the percentage of reviews 3.5 or greater
-	$basicUserCount = 0;
-	$basicUserGreaterThan = 0;
-	$criticUserCount = 0;
-	$criticUserGreaterThan = 0;
-	$criticAverageSmell = 0;
-	$criticAveragePotency = 0;
-	$criticAverageLooks = 0;
-	foreach($reviews as $review){
-		$commentAuthorEmail = $review -> comment_author_email;
-		$commentUser = get_user_by('email',$commentAuthorEmail);
-		$role = $commentUser -> wp_capabilities;
-		 if($role['administrator'] == 1 || $role['contributor'] == 1){
-		 	$criticUserCount++;
-		 
-		$rating = get_field('rating',$review);
-		$smell = get_field('smell',$review);
-		$potency = get_field('potency',$review);
-		$looks = get_field('looks',$review);
-		if($rating >= 3.5){
-		    $criticUserGreaterThan++;
-		}
-		if($smell >= 3.5){
-		    $criticAverageSmell++;
-		}
-		if($potency >= 3.5){
-		    $criticAveragePotency++;
-		}
-		if($looks >= 3.5){
-		    $criticAverageLooks++;
-		}
-		}
-		else{
-			$basicUserCount++;
-			$rating = get_field('rating',$review);
-
-			//rating average
-			if($rating >= 3.5){
-			    //add another greater than review
-			    $basicUserGreaterThan++;
-			}
-		}
-	}
-	$userAverageReview = number_format($basicUserGreaterThan / $basicUserCount,2);
-	$criticAverageReview = number_format($criticUserGreaterThan / $criticUserCount,2);
-	$criticAveragePotencyReview = number_format($criticAveragePotency /$criticUserCount,2);
-	$criticAverageSmellReview = number_format($criticAverageSmell /$criticUserCount,2);
-	$criticAverageLooksReview = number_format($criticAverageLooks /$criticUserCount,2);
-
-	
+	//script to calculate averages
+	include(locate_template('nickzack/build/html/partials/single-product-partials/single-product-get-averages.php'));
+	//first panel.. product info
+	include(locate_template('nickzack/build/html/partials/single-product-partials/single-product-top-info.php'));
+	//reviews
+	include(locate_template('nickzack/build/html/partials/single-product-partials/single-product-reviews.php'));
 	?>
-
-	<h5>User Overall Rating: <?php echo $userAverageReview;?></h5>
-	<h5>Critic Overall Rating: <?php echo $criticAverageReview;?></h5>
-	<p> Critic Reviews</p>
-	<ul>
-		<li>Potency: <?php echo $criticAveragePotencyReview;?></li>
-		<li>Smell: <?php echo $criticAverageSmellReview;?></li>
-		<li>Looks: <?php echo $criticAverageLooksReview;?></li>
-	</ul>
 
 	<!-- END REVIEW AVERAGE -->
 
@@ -111,6 +53,7 @@ $postID = $post -> ID;
 			<p>Smell: <?php echo $smell;?></p>
 			<p>potency: <?php echo $potency;?></p>
 			<p>looks: <?php echo $looks;?></p>
+			<?php //echo do_shortcode('[thumbs-rating-buttons]'); ?>
 
 			<?php } ?>
 		</div>

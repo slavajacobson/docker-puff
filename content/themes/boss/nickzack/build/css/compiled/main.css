@@ -212,3 +212,85 @@ button#searchsubmit {
               width: 100%; }
               .page-view.products .panels .right-panel ul li.product a .product-info .product-info-under-title .panel {
                 width: 20%; }
+
+.page-view.single-product .product-top-info {
+  width: 75%;
+  display: flex;
+  padding-left: 100px;
+  padding-top: 50px; }
+  .page-view.single-product .product-top-info .left-box .main-image img {
+    max-width: 300px; }
+  .page-view.single-product .product-top-info .left-box .sub-images img {
+    max-width: 75px; }
+  .page-view.single-product .product-top-info .right-box {
+    width: 100%;
+    padding-left: 5%; }
+    .page-view.single-product .product-top-info .right-box .title h1 {
+      font-size: 2em; }
+    .page-view.single-product .product-top-info .right-box .info {
+      display: flex;
+      padding-top: 1.5em;
+      padding-bottom: 1.5em; }
+      .page-view.single-product .product-top-info .right-box .info .bold {
+        color: black;
+        font-weight: 900;
+        font-size: 1.2em; }
+      .page-view.single-product .product-top-info .right-box .info .type, .page-view.single-product .product-top-info .right-box .info .brand, .page-view.single-product .product-top-info .right-box .info .thc-cbd {
+        padding-left: 5em; }
+      .page-view.single-product .product-top-info .right-box .info .type {
+        display: flex;
+        align-items: center;
+        padding-left: 0px; }
+        .page-view.single-product .product-top-info .right-box .info .type span {
+          padding: 5px 15px;
+          border-radius: 5px; }
+          .page-view.single-product .product-top-info .right-box .info .type span.hybrid {
+            color: green;
+            border: 2px solid green; }
+          .page-view.single-product .product-top-info .right-box .info .type span.sativa {
+            color: orange;
+            border: 2px solid orange; }
+          .page-view.single-product .product-top-info .right-box .info .type span.indica {
+            color: purple;
+            border: 2px solid purple; }
+      .page-view.single-product .product-top-info .right-box .info .brand {
+        display: flex;
+        align-items: center; }
+        .page-view.single-product .product-top-info .right-box .info .brand span a {
+          color: blue;
+          padding-left: 5px; }
+      .page-view.single-product .product-top-info .right-box .info .thc-cbd p:nth-child(1) {
+        padding-bottom: 5px; }
+      .page-view.single-product .product-top-info .right-box .info .thc-cbd p span.bold {
+        padding-right: 15px; }
+      .page-view.single-product .product-top-info .right-box .info .thc-cbd p span.content {
+        font-size: 1.2em; }
+    .page-view.single-product .product-top-info .right-box .review-averages {
+      display: flex;
+      padding-top: 1.5em; }
+      .page-view.single-product .product-top-info .right-box .review-averages .critics, .page-view.single-product .product-top-info .right-box .review-averages .users {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; }
+        .page-view.single-product .product-top-info .right-box .review-averages .critics h5, .page-view.single-product .product-top-info .right-box .review-averages .users h5 {
+          width: 100%;
+          text-align: center;
+          font-size: 1em;
+          text-transform: uppercase; }
+        .page-view.single-product .product-top-info .right-box .review-averages .critics .icon-and-percent, .page-view.single-product .product-top-info .right-box .review-averages .users .icon-and-percent {
+          display: flex;
+          align-items: center;
+          padding-top: 2em;
+          padding-bottom: 2em; }
+          .page-view.single-product .product-top-info .right-box .review-averages .critics .icon-and-percent .icon img, .page-view.single-product .product-top-info .right-box .review-averages .users .icon-and-percent .icon img {
+            max-width: 75px; }
+          .page-view.single-product .product-top-info .right-box .review-averages .critics .icon-and-percent .percent p, .page-view.single-product .product-top-info .right-box .review-averages .users .icon-and-percent .percent p {
+            color: black;
+            font-size: 3em;
+            font-weight: 900; }
+        .page-view.single-product .product-top-info .right-box .review-averages .critics .review-count, .page-view.single-product .product-top-info .right-box .review-averages .users .review-count {
+          width: 100%;
+          text-align: center; }
+          .page-view.single-product .product-top-info .right-box .review-averages .critics .review-count p, .page-view.single-product .product-top-info .right-box .review-averages .users .review-count p {
+            color: blue;
+            font-size: 1.1em; }

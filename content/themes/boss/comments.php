@@ -40,7 +40,7 @@ if ( post_password_required() )
                 </h2>
 
                 <ol class="commentlist">
-                    <?php echo $comments_list; ?>
+                    
                 </ol><!-- .commentlist -->
 
                 <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
