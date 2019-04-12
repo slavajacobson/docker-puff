@@ -27,7 +27,7 @@ new Vue({
     },
     getPosts(filters){
       if(filters =='none'){
-      axios.get('http://localhost/wp-json/product/all-products').then(response => {
+      axios.get('/wp-json/product/all-products').then(response => {
         this.posts = response.data;
         //console.log(response.data);
         
@@ -39,7 +39,7 @@ new Vue({
       this.posts = [];
       this.pages = [];
 
-      axios.get('http://localhost/wp-json/product/all-products').then(response => {
+      axios.get('/wp-json/product/all-products').then(response => {
         let filterList = filters[0];
         let activeFilters = [];
         for(filterType of this.filterListTypes){
