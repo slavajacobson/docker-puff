@@ -92,6 +92,33 @@ button#searchsubmit {
 .search-wrap {
   background-color: white !important; }
 
+#colophon {
+  display: none; }
+
+.hybrid {
+  color: green;
+  border: 2px solid green;
+  padding: 5px 15px;
+  border-radius: 5px;
+  max-width: 75px;
+  text-align: center; }
+
+.sativa {
+  color: orange;
+  border: 2px solid orange;
+  padding: 5px 15px;
+  border-radius: 5px;
+  max-width: 75px;
+  text-align: center; }
+
+.indica {
+  color: purple;
+  border: 2px solid purple;
+  padding: 5px 15px;
+  border-radius: 5px;
+  max-width: 75px;
+  text-align: center; }
+
 .page-view.homepage .first-row {
   position: relative; }
   .page-view.homepage .first-row .background {
@@ -179,6 +206,13 @@ button#searchsubmit {
       width: 25%;
       background-color: white;
       min-height: 100vh; }
+      .page-view.products .panels .left-panel .filter-search {
+        margin-top: 2em; }
+        .page-view.products .panels .left-panel .filter-search span {
+          border: 2px solid blue;
+          padding: 5px 15px;
+          border-radius: 5px;
+          color: blue; }
     .page-view.products .panels .right-panel {
       width: 70%;
       margin-left: 2.5%;
@@ -192,105 +226,215 @@ button#searchsubmit {
         z-index: 9999;
         position: relative;
         background-color: #e5e5e5; }
-        .page-view.products .panels .right-panel ul li.product a {
+        .page-view.products .panels .right-panel ul li.product {
           background-color: white;
           display: flex;
           border: 1px solid black;
-          margin-bottom: 0.35em; }
-          .page-view.products .panels .right-panel ul li.product a .product-image {
-            width: 200px; }
-            .page-view.products .panels .right-panel ul li.product a .product-image img {
+          margin-bottom: 0.35em;
+          padding-top: 1em; }
+          .page-view.products .panels .right-panel ul li.product .product-image {
+            width: 200px;
+            padding-left: 2em;
+            padding-right: 2em; }
+            .page-view.products .panels .right-panel ul li.product .product-image a {
+              display: block;
+              display: flex;
+              align-items: center; }
+            .page-view.products .panels .right-panel ul li.product .product-image img {
               width: 100%; }
-          .page-view.products .panels .right-panel ul li.product a .product-info {
+          .page-view.products .panels .right-panel ul li.product .product-info {
             width: calc(100% - 200px);
-            display: flex;
             flex-wrap: wrap; }
-            .page-view.products .panels .right-panel ul li.product a .product-info .product-title {
+            .page-view.products .panels .right-panel ul li.product .product-info .product-title {
               width: 100%; }
-            .page-view.products .panels .right-panel ul li.product a .product-info .product-info-under-title {
+              .page-view.products .panels .right-panel ul li.product .product-info .product-title .product-name a h5 {
+                font-size: 1.7em;
+                text-transform: uppercase;
+                font-family: "Montserrat", sans-serif; }
+              .page-view.products .panels .right-panel ul li.product .product-info .product-title .product-brand h5 {
+                padding-bottom: 10px; }
+                .page-view.products .panels .right-panel ul li.product .product-info .product-title .product-brand h5 a {
+                  color: #338eec; }
+                  .page-view.products .panels .right-panel ul li.product .product-info .product-title .product-brand h5 a:hover {
+                    color: #00AF87; }
+            .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title {
               display: flex;
               width: 100%; }
-              .page-view.products .panels .right-panel ul li.product a .product-info .product-info-under-title .panel {
-                width: 20%; }
+              .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel {
+                width: 33%; }
+                .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel .mini-title {
+                  color: black;
+                  font-family: "Muli", sans-serif;
+                  font-weight: 800;
+                  font-size: 1.1em;
+                  padding-right: 20px; }
+                .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel.package {
+                  position: relative; }
+                  .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel.package:after {
+                    content: '';
+                    position: absolute;
+                    right: 50px;
+                    height: 100%;
+                    width: 1px;
+                    background-color: black;
+                    top: 0px; }
+                .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel.brand-and-type {
+                  position: relative; }
+                  .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel.brand-and-type:after {
+                    content: '';
+                    position: absolute;
+                    right: 50px;
+                    height: 100%;
+                    width: 1px;
+                    background-color: black;
+                    top: 0px; }
+                  .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel.brand-and-type p.plant-type {
+                    margin-bottom: 10px; }
+                  .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel.brand-and-type p.thc {
+                    color: black; }
+                  .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel.brand-and-type p.cbd {
+                    color: black; }
+                .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel.score {
+                  display: flex; }
+                  .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel.score .user-reviews {
+                    padding-right: 2em; }
+                  .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel.score .top {
+                    display: flex;
+                    padding-top: 15px; }
+                    .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel.score .top .image img {
+                      max-width: 50px;
+                      padding-right: 0.3em; }
+                    .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel.score .top p {
+                      display: flex;
+                      align-items: center;
+                      font-family: "Montserrat", sans-serif;
+                      color: black;
+                      font-weight: 600;
+                      font-size: 2em; }
+                  .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel.score .bottom {
+                    padding-top: 5px; }
+                    .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel.score .bottom p {
+                      text-align: center;
+                      font-family: "Muli", sans-serif;
+                      color: black; }
+                  .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel.score .mini-title {
+                    display: none; }
 
-.page-view.single-product .product-top-info {
-  width: 75%;
-  display: flex;
-  padding-left: 100px;
-  padding-top: 50px; }
-  .page-view.single-product .product-top-info .left-box .main-image img {
-    max-width: 300px; }
-  .page-view.single-product .product-top-info .left-box .sub-images img {
-    max-width: 75px; }
-  .page-view.single-product .product-top-info .right-box {
-    width: 100%;
-    padding-left: 5%; }
-    .page-view.single-product .product-top-info .right-box .title h1 {
-      font-size: 2em; }
-    .page-view.single-product .product-top-info .right-box .info {
-      display: flex;
-      padding-top: 1.5em;
-      padding-bottom: 1.5em; }
-      .page-view.single-product .product-top-info .right-box .info .bold {
-        color: black;
-        font-weight: 900;
-        font-size: 1.2em; }
-      .page-view.single-product .product-top-info .right-box .info .type, .page-view.single-product .product-top-info .right-box .info .brand, .page-view.single-product .product-top-info .right-box .info .thc-cbd {
-        padding-left: 5em; }
-      .page-view.single-product .product-top-info .right-box .info .type {
+.page-view.single-product {
+  background-color: #f2f2f2; }
+  .page-view.single-product .product-top-info {
+    background-color: white;
+    width: 75%;
+    display: flex;
+    padding-left: 100px;
+    padding-top: 50px; }
+    .page-view.single-product .product-top-info p {
+      font-family: "Muli", sans-serif !important; }
+    .page-view.single-product .product-top-info .left-box .main-image img {
+      max-width: 300px; }
+    .page-view.single-product .product-top-info .left-box .sub-images img {
+      max-width: 75px; }
+    .page-view.single-product .product-top-info .right-box {
+      width: 100%;
+      padding-left: 5%; }
+      .page-view.single-product .product-top-info .right-box .title h1 {
+        font-size: 2em;
+        font-family: "Montserrat", sans-serif; }
+      .page-view.single-product .product-top-info .right-box .info {
         display: flex;
-        align-items: center;
-        padding-left: 0px; }
-        .page-view.single-product .product-top-info .right-box .info .type span {
-          padding: 5px 15px;
-          border-radius: 5px; }
-          .page-view.single-product .product-top-info .right-box .info .type span.hybrid {
-            color: green;
-            border: 2px solid green; }
-          .page-view.single-product .product-top-info .right-box .info .type span.sativa {
-            color: orange;
-            border: 2px solid orange; }
-          .page-view.single-product .product-top-info .right-box .info .type span.indica {
-            color: purple;
-            border: 2px solid purple; }
-      .page-view.single-product .product-top-info .right-box .info .brand {
-        display: flex;
-        align-items: center; }
-        .page-view.single-product .product-top-info .right-box .info .brand span a {
-          color: blue;
-          padding-left: 5px; }
-      .page-view.single-product .product-top-info .right-box .info .thc-cbd p:nth-child(1) {
-        padding-bottom: 5px; }
-      .page-view.single-product .product-top-info .right-box .info .thc-cbd p span.bold {
-        padding-right: 15px; }
-      .page-view.single-product .product-top-info .right-box .info .thc-cbd p span.content {
-        font-size: 1.2em; }
-    .page-view.single-product .product-top-info .right-box .review-averages {
-      display: flex;
-      padding-top: 1.5em; }
-      .page-view.single-product .product-top-info .right-box .review-averages .critics, .page-view.single-product .product-top-info .right-box .review-averages .users {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center; }
-        .page-view.single-product .product-top-info .right-box .review-averages .critics h5, .page-view.single-product .product-top-info .right-box .review-averages .users h5 {
-          width: 100%;
-          text-align: center;
-          font-size: 1em;
-          text-transform: uppercase; }
-        .page-view.single-product .product-top-info .right-box .review-averages .critics .icon-and-percent, .page-view.single-product .product-top-info .right-box .review-averages .users .icon-and-percent {
+        padding-top: 1.5em;
+        padding-bottom: 1.5em; }
+        .page-view.single-product .product-top-info .right-box .info .bold {
+          color: black;
+          font-weight: 900;
+          font-size: 1.2em; }
+        .page-view.single-product .product-top-info .right-box .info .type, .page-view.single-product .product-top-info .right-box .info .brand, .page-view.single-product .product-top-info .right-box .info .thc-cbd {
+          padding-left: 5em; }
+        .page-view.single-product .product-top-info .right-box .info .type {
           display: flex;
           align-items: center;
-          padding-top: 2em;
-          padding-bottom: 2em; }
-          .page-view.single-product .product-top-info .right-box .review-averages .critics .icon-and-percent .icon img, .page-view.single-product .product-top-info .right-box .review-averages .users .icon-and-percent .icon img {
-            max-width: 75px; }
-          .page-view.single-product .product-top-info .right-box .review-averages .critics .icon-and-percent .percent p, .page-view.single-product .product-top-info .right-box .review-averages .users .icon-and-percent .percent p {
-            color: black;
-            font-size: 3em;
-            font-weight: 900; }
-        .page-view.single-product .product-top-info .right-box .review-averages .critics .review-count, .page-view.single-product .product-top-info .right-box .review-averages .users .review-count {
-          width: 100%;
-          text-align: center; }
-          .page-view.single-product .product-top-info .right-box .review-averages .critics .review-count p, .page-view.single-product .product-top-info .right-box .review-averages .users .review-count p {
+          padding-left: 0px; }
+        .page-view.single-product .product-top-info .right-box .info .brand {
+          display: flex;
+          align-items: center; }
+          .page-view.single-product .product-top-info .right-box .info .brand span a {
             color: blue;
-            font-size: 1.1em; }
+            padding-left: 5px; }
+        .page-view.single-product .product-top-info .right-box .info .thc-cbd p:nth-child(1) {
+          padding-bottom: 5px; }
+        .page-view.single-product .product-top-info .right-box .info .thc-cbd p span.bold {
+          padding-right: 15px; }
+        .page-view.single-product .product-top-info .right-box .info .thc-cbd p span.content {
+          font-size: 1.2em; }
+      .page-view.single-product .product-top-info .right-box .review-averages {
+        display: flex;
+        padding-top: 1.5em; }
+        .page-view.single-product .product-top-info .right-box .review-averages .critics, .page-view.single-product .product-top-info .right-box .review-averages .users {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center; }
+          .page-view.single-product .product-top-info .right-box .review-averages .critics h5, .page-view.single-product .product-top-info .right-box .review-averages .users h5 {
+            width: 100%;
+            text-align: center;
+            font-size: 1em;
+            text-transform: uppercase;
+            font-family: "Montserrat", sans-serif; }
+          .page-view.single-product .product-top-info .right-box .review-averages .critics .icon-and-percent, .page-view.single-product .product-top-info .right-box .review-averages .users .icon-and-percent {
+            display: flex;
+            align-items: center;
+            padding-top: 2em;
+            padding-bottom: 2em; }
+            .page-view.single-product .product-top-info .right-box .review-averages .critics .icon-and-percent .icon img, .page-view.single-product .product-top-info .right-box .review-averages .users .icon-and-percent .icon img {
+              max-width: 75px;
+              padding-right: 10px; }
+            .page-view.single-product .product-top-info .right-box .review-averages .critics .icon-and-percent .percent p, .page-view.single-product .product-top-info .right-box .review-averages .users .icon-and-percent .percent p {
+              color: black;
+              font-size: 3em;
+              font-weight: 900; }
+          .page-view.single-product .product-top-info .right-box .review-averages .critics .review-count, .page-view.single-product .product-top-info .right-box .review-averages .users .review-count {
+            width: 100%;
+            text-align: center; }
+            .page-view.single-product .product-top-info .right-box .review-averages .critics .review-count p, .page-view.single-product .product-top-info .right-box .review-averages .users .review-count p {
+              color: blue;
+              font-size: 1.1em; }
+  .page-view.single-product .user-reviews#userReviews {
+    width: 75%;
+    padding-left: 100px; }
+    .page-view.single-product .user-reviews#userReviews .comment-respond .acf-field[data-type="star_rating_field"] {
+      display: none; }
+    .page-view.single-product .user-reviews#userReviews li {
+      padding-top: 50px;
+      padding-bottom: 50px;
+      list-style: none; }
+      .page-view.single-product .user-reviews#userReviews li li {
+        padding-left: 150px; }
+        .page-view.single-product .user-reviews#userReviews li li .rating {
+          display: none; }
+      .page-view.single-product .user-reviews#userReviews li article {
+        display: flex; }
+        .page-view.single-product .user-reviews#userReviews li article .left-side .comment-author h5 {
+          padding-bottom: 20px; }
+        .page-view.single-product .user-reviews#userReviews li article .left-side .avatar-col img {
+          border-radius: 100%; }
+        .page-view.single-product .user-reviews#userReviews li article .right-side {
+          width: 100%;
+          padding-left: 4em; }
+          .page-view.single-product .user-reviews#userReviews li article .right-side .rating-and-date {
+            display: flex; }
+            .page-view.single-product .user-reviews#userReviews li article .right-side .rating-and-date .rating {
+              padding-right: 30px; }
+              .page-view.single-product .user-reviews#userReviews li article .right-side .rating-and-date .rating i {
+                color: #00AF87; }
+            .page-view.single-product .user-reviews#userReviews li article .right-side .rating-and-date .date p a {
+              font-family: "Muli", sans-serif; }
+          .page-view.single-product .user-reviews#userReviews li article .right-side .comment-content.comment {
+            padding-top: 1em;
+            padding-bottom: 1em; }
+            .page-view.single-product .user-reviews#userReviews li article .right-side .comment-content.comment p {
+              font-family: "Muli", sans-serif; }
+          .page-view.single-product .user-reviews#userReviews li article .right-side footer.comment-meta .entry-actions a {
+            color: black;
+            font-family: "Muli", sans-serif; }
+          .page-view.single-product .user-reviews#userReviews li article .right-side footer.comment-meta .entry-actions .comment-text-hide p {
+            display: none !important; }
+

@@ -1,3 +1,4 @@
+@import '../partials/variables.sass'
 .page-view.products
 	background-color: #e5e5e5
 	padding-top: 50px
@@ -14,14 +15,19 @@
 			background-color: white
 			min-height: 100vh
 			.sub-panel
+			.filter-search
+				margin-top: 2em
+				span
+					border: 2px solid blue
+					padding: 5px 15px
+					border-radius: 5px
+					color: blue
 		.right-panel
 			width: 70%
 			margin-left: 2.5%
-			
 			position: relative
 			min-height: 100vh
 			.loader-wrapper
-				
 				position: absolute
 				height: 100%
 				width: 100%
@@ -31,28 +37,109 @@
 				position: relative
 				background-color: #e5e5e5
 				li.product
-					a
-						background-color: white	
-						display: flex
-						border: 1px solid black
-						margin-bottom: 0.35em
-						.product-image
-							width: 200px
-							img
-								width: 100%
-						.product-info
-							width: calc(100% - 200px)
+					background-color: white	
+					display: flex
+					border: 1px solid black
+					margin-bottom: 0.35em
+					padding-top: 1em
+					
+					.product-image
+						width: 200px
+						padding-left: 2em
+						padding-right: 2em
+						a
+							display: block
 							display: flex
-							flex-wrap: wrap
-							.product-title
-								width: 100%
+							align-items: center
+						img
+							width: 100%
+					.product-info
+						width: calc(100% - 200px)
+						flex-wrap: wrap
+						.product-title
+							.product-name
+								a
+									h5
+										font-size: 1.7em
+										text-transform: uppercase
+										font-family: $header
+
+							.product-brand
 								h5
-							.product-info-under-title
-								display: flex
-								width: 100%
-								.panel
-									width: 20%
-									&.thc-cbd
+									padding-bottom: 10px
+									a
+										color: #338eec
+										&:hover
+											color: $brand
+
+							width: 100%
+							
+						.product-info-under-title
+							display: flex
+							width: 100%
+							.panel
+								.mini-title
+									color: black
+									font-family: $para
+									font-weight: 800
+									font-size: 1.1em
+									padding-right: 20px
+								width: 33%
+								&.thc-cbd
+								&.package
+									position: relative
+									&:after
+										content: ''
+										position: absolute
+										right: 50px
+										height: 100%
+										width: 1px
+										background-color: black
+										top: 0px
+								&.brand-and-type
+									position: relative
+									&:after
+										content: ''
+										position: absolute
+										right: 50px
+										height: 100%
+										width: 1px
+										background-color: black
+										top: 0px
+									p.plant-type
+										margin-bottom: 10px
+									p.thc
+										color: black
+									p.cbd
+										color: black
+									
+								&.score
+									display: flex
+									.user-reviews
+										padding-right: 2em
+									.top
+										display: flex
+										padding-top: 15px
+										.image
+											img
+												max-width: 50px
+												padding-right: 0.3em
+										p
+											display: flex
+											align-items: center
+											font-family: $header
+											color: black
+											font-weight: 600
+											font-size: 2em
+									.bottom
+										padding-top: 5px
+										p
+											text-align: center
+											font-family: $para
+											color: black
+									.mini-title
+										display: none
+
 
 
 

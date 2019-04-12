@@ -1,7 +1,7 @@
 <?php
 
 ?>
-<link href = '/wp-content/themes/boss/nickzack/build/css/partials/loader.css' rel = 'stylesheet'>
+<link href = '/content/themes/boss/nickzack/build/css/partials/loader.css' rel = 'stylesheet'>
 	<div class = 'loader-wrapper'>
 			<div class="socket">
 			<div class="gel center-gel">

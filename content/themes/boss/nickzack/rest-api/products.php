@@ -29,6 +29,8 @@ function return_products($data){
           $plantCategory = get_field('category',$post);
           $productBrandID = get_field("product_brand_id",$post);
           $productBrandRelationship = get_field('brand_relationship',$post);
+          $brandPost = get_post($productBrandID);
+          $brandURL = get_permalink($brandPost);
      	//THC
      	$THC = get_field('thc',$post);
      	//CBD
@@ -64,30 +66,43 @@ function return_products($data){
           $commentDate = $review -> comment_date;
           $commentContent = $review -> comment_content;
           $commenterEmail = $review -> comment_author_email;
+          $commentParent = $review -> comment_parent;
 
           //figure out if user is a critic or basic user
           $commentUser = get_user_by('email',$commentAuthorEmail);
           $role = $commentUser -> wp_capabilities;
-
+          //find out if the comment is a reply
+          $reply = false;
+          if($commentParent != 0){
+               $reply = true;
+               $replyID = $commentParent;
+          }
+          else{
+               $replyID = false;
+          }
           //critic review array
           if($role['administrator'] == 1 || $role['contributor'] == 1){
-               $criticUserCount++;
+               
                $role = 'Critic';
                $rating = get_field('rating',$review);
                $smell = get_field('smell',$review);
                $potency = get_field('potency',$review);
                $looks = get_field('looks',$review);
-               if($rating >= 3.5){
-                    $criticUserGreaterThan++;
-               }
-               if($smell >= 3.5){
-                    $criticAverageSmell++;
-               }
-               if($potency >= 3.5){
-                    $criticAveragePotency++;
-               }
-               if($looks >= 3.5){
-                    $criticAverageLooks++;
+               //if its not a reply and has a valid rating
+               if($rating !=0){
+                    $criticUserCount++;
+                    if($rating >= 3.5){
+                         $criticUserGreaterThan++;
+                    }
+                    if($smell >= 3.5){
+                         $criticAverageSmell++;
+                    }
+                    if($potency >= 3.5){
+                         $criticAveragePotency++;
+                    }
+                    if($looks >= 3.5){
+                         $criticAverageLooks++;
+                    }
                }
                $criticArray = array(
                     'role' => $role,
@@ -100,20 +115,26 @@ function return_products($data){
                     'commentIP' => $commentIP,
                     'commentDate' => $commentDate,
                     'commentContent' => $commentContent,
-                    'commenterEmail' => $commenterEmail
+                    'commenterEmail' => $commenterEmail,
+                    'reply' => $reply,
+                    'replyID' => $replyID
                );
                array_push($criticReviews,$criticArray);
           }
           //basic user review array
           else{
-               $basicUserCount++;
+              
                $role = 'User';
                $rating = get_field('rating',$review);
 
-               //rating average
-               if($rating >= 3.5){
-                    //add another greater than review
-                    $basicUserGreaterThan++;
+               //if its not a reply and has a valid rating
+               if($rating !=0){
+                    //rating average
+                    $basicUserCount++;
+                    if($rating >= 3.5){
+                         //add another greater than review
+                         $basicUserGreaterThan++;
+                    }
                }
                $userArray = array(
                     'role' => $role,
@@ -123,7 +144,9 @@ function return_products($data){
                     'commentIP' => $commentIP,
                     'commentDate' => $commentDate,
                     'commentContent' => $commentContent,
-                    'commenterEmail' => $commenterEmail
+                    'commenterEmail' => $commenterEmail,
+                    'reply' => $reply,
+                    'replyID' => $replyID
                );
                array_push($userReviews,$userArray);
           }
@@ -157,6 +180,7 @@ function return_products($data){
           'plantCategory' => $plantCategory,
           'productBrandID' => $productBrandID,
           'productBrandRelationship' => $productBrandRelationship,
+          'brandLink' => $brandURL,
      	'THC' => $THC,
      	'CBD' => $CBD,
      	'package' => $package,
@@ -176,6 +200,7 @@ function return_products($data){
           'plantCategory' => $plantCategory,
           'productBrandID' => $productBrandID,
           'productBrandRelationship' => $productBrandRelationship,
+          'brandLink' => $brandURL,
           'THC' => $THC,
           'CBD' => $CBD,
           'post_id' => $postID,
@@ -184,7 +209,8 @@ function return_products($data){
      }
      array_push($data,$finalArray);
      }
-     return $data;
+    
+    return $data;
 }
 
 

@@ -8,19 +8,68 @@ new Vue({
       page: 1,
       perPage: 9,
       pages: [],
+      filterList: [
+      {"type":null}
+      ],
+      filterListTypes:['type']
   
     }
   },
   methods:{
-    getPosts(){
+    filter(filterType,filter){
+      let filterArray = {"filterType":filterType,"filter":filter};
+      this.filterList[0][filterType] = filter;
+
+    
+    },
+    filterResults(){
+      this.getPosts(this.filterList);
+    },
+    getPosts(filters){
+      if(filters =='none'){
       axios.get('http://localhost/wp-json/product/all-products').then(response => {
         this.posts = response.data;
-        console.log(response.data);
+        //console.log(response.data);
         
       }).catch(e =>{
         this.errors.push(e);
       })
+    }
+    else{
+      this.posts = [];
+      this.pages = [];
 
+      axios.get('http://localhost/wp-json/product/all-products').then(response => {
+        let filterList = filters[0];
+        let activeFilters = [];
+        for(filterType of this.filterListTypes){
+          let name = filterType;
+          if(filterList[filterType] !== null){
+            let newArray = {[filterType]:filterList[filterType]};
+            activeFilters.push(newArray);
+          }
+        }
+        if(activeFilters[0] === undefined){
+            console.log('no filters selected!');
+            this.posts = response.data;
+        }
+        else{
+          let postsToFilter = response.data;
+          //filter by type
+          let typeName = activeFilters[0]['type'];
+          for(product of postsToFilter){
+            let productType = product.plantType.toLowerCase();
+            if(productType === typeName){
+              this.posts.push(product);
+            }
+          }
+        }
+
+        
+      }).catch(e =>{
+        console.error(e);
+      })
+    }
     },
     setPages(){
       let numberOfPages = Math.ceil(this.posts.length / this.perPage);
@@ -36,27 +85,7 @@ new Vue({
       let from = (page * perPage) - perPage;
       let to = (page * perPage);
       return  posts.slice(from, to);
-    },
-    checkEmptyImages(){
-     setTimeout(function(){
-
-
-      $(".product").each(function(){
-      let container = $(this).find(".product-image");
-      let thisImage = $(this).find(".product-image img");
-      let image = thisImage.attr("src");
-      $.get(image)
-          .done(function() { 
-              
-
-          }).fail(function() { 
-              // Image doesn't exist - do something else.
-          thisImage.attr("src","https://via.placeholder.com/200");
-          container.addClass("no-image");
-          
-          })
-      });
-       },200);
+      
     }
   },
     computed: {
@@ -70,7 +99,7 @@ new Vue({
         }
     },
     created () {
-        this.getPosts();
+        this.getPosts('none');
         
     },
     filters:{
@@ -89,6 +118,16 @@ new Vue({
           return false;
         }
 
+      },
+      findLength: function(value){
+        let amountOfReviews = 0;
+        for(val of value){
+          let replyCheck = val.reply;
+          if(!replyCheck){
+            amountOfReviews++;
+          }
+        }
+        return amountOfReviews;
       }
     }
 })

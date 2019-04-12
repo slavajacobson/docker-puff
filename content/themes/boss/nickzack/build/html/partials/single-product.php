@@ -15,58 +15,10 @@ $postID = $post -> ID;
 	<!-- END REVIEW AVERAGE -->
 
 
-	<!-- COMMENTS -->
-	<?php
-		$user =  wp_get_current_user();
-		$com = get_comments(array('post_id' => $postID));
-		$counter = 0;
-	foreach($com as $co){
-		$commenterEmail = $co -> comment_author_email;
-		$commentUserProfile = get_user_by('email',$commenterEmail);
-		$role = $commentUserProfile -> wp_capabilities;
-		if($role['administrator'] == 1 || $role['contributor'] == 1){
-			$role = 'Critic';
-		}
-		else{
-			$role = 'User';
-		}
-		$rating = get_field('rating',$co);
-		$smell = get_field('smell',$co);
-		$potency = get_field('potency',$co);
-		$looks = get_field('looks',$co);
-		$comment = $co -> comment_content;
-		$commentAuthor = $co -> comment_author;
-		$commentID = $co -> comment_ID;
 
-		$userProfileLink = '/members/'.$commentUserProfile -> user_nicename.'/profile/';
-
-
-		?>
-		<div style = 'padding-top:10px;padding-bottom:10px;'>
-			<a href = <?php echo $userProfileLink;?>
-				<p>User: <?php echo $commentAuthor;?></p>
-			</a>
-			<p>Comment: <?php echo $comment;?></p>
-			<p>Role: <?php echo $role;?></p>
-			<p>Overall Rating: <?php echo $rating;?></p>
-			<?php if(!empty($smell)){ ?>
-			<p>Smell: <?php echo $smell;?></p>
-			<p>potency: <?php echo $potency;?></p>
-			<p>looks: <?php echo $looks;?></p>
-			<?php //echo do_shortcode('[thumbs-rating-buttons]'); ?>
-
-			<?php } ?>
-		</div>
-
-		<?php
-
-		//get IP
-		//echo get_comment_author_IP($co);
-
-	}
 	
 
-
+<?php
 $comments_args = array(
         // Change the title of send button 
         'label_submit' => __( 'Send', 'textdomain' ),

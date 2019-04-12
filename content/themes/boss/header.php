@@ -20,6 +20,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,600|Muli:600,700,900" rel="stylesheet">
 		<!-- BuddyPress and bbPress Stylesheets are called in wp_head, if plugins are activated -->
 		<?php wp_head(); ?>
 	</head>
