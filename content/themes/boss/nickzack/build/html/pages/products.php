@@ -9,11 +9,21 @@
 	</div>
 	<div class = 'left-panel'>
 		<h5 class = 'title'>FILTERS</h5>
+		<h5 class = 'filter-title'>TYPE</h5>
 		<div class = 'type-filters'>
 			<span class = 'all indica' data-type = 'all' @click="filter('type','all')">All</span>
 			<span class = 'indica' data-type = 'indica' @click ="filter('type','indica')">Indica</span>
 			<span class = 'hybrid' data-type = 'hybrid' @click ="filter('type','hybrid')" >Hybrid</span>
 			<span class = 'sativa' data-type = 'sativa' @click ="filter('type','sativa')" >Sativa</span>
+		</div>
+		<h5 class = 'filter-title'>CATEGORIES</h5>
+		<div class = 'category-filters'>
+			<span class = 'sativa' data-type = 'sativa' @click ="filter('category','sativa')" >All</span>
+			<span class = 'sativa' data-type = 'sativa' @click ="filter('category','flower')" >Flower</span>
+			<span class = 'sativa' data-type = 'sativa' @click ="filter('category','pre-roll')" >Pre-Roll</span>
+			<span class = 'sativa' data-type = 'sativa' @click ="filter('category','oil-and-capsules')">Oil and Capsules</span>
+			<span class = 'sativa' data-type = 'sativa' @click ="filter('category','seeds')" >Seeds</span>
+
 		</div>
 		<div class = 'filter-search'>
 			<span class = 'filter-button' data-type = 'sativa' @click ="filterResults()" >Filter</span>

@@ -46,7 +46,7 @@
 			<div class="header-wrap">
 				<div class = 'links'>
 					<ul id = 'nav'>
-						<li><a href = '#'>Products</a></li>
+						<li><a href = '/products/'>Products</a></li>
 						<li><a href = '#'>Brands</a></li>
 						<li><a href = '#'>Stores</a></li>
 						<li><a href = '#'>Maps</a></li>

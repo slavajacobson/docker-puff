@@ -9,9 +9,10 @@ new Vue({
       perPage: 9,
       pages: [],
       filterList: [
-      {"type":null}
+      {"type":null},
+      {"category":null}
       ],
-      filterListTypes:['type']
+      filterListTypes:['type','category']
   
     }
   },
@@ -19,6 +20,7 @@ new Vue({
     filter(filterType,filter){
       let filterArray = {"filterType":filterType,"filter":filter};
       this.filterList[0][filterType] = filter;
+
 
     
     },
@@ -38,7 +40,6 @@ new Vue({
     else{
       this.posts = [];
       this.pages = [];
-
       axios.get('/wp-json/product/all-products').then(response => {
         let filterList = filters[0];
         let activeFilters = [];
@@ -49,6 +50,7 @@ new Vue({
             activeFilters.push(newArray);
           }
         }
+
         if(activeFilters[0] === undefined){
             console.log('no filters selected!');
             this.posts = response.data;
@@ -57,11 +59,30 @@ new Vue({
           let postsToFilter = response.data;
           //filter by type
           let typeName = activeFilters[0]['type'];
+          let categoryName = activeFilters[0]['category'];
           for(product of postsToFilter){
-            let productType = product.plantType.toLowerCase();
-            if(productType === typeName){
-              this.posts.push(product);
+            //check type
+            if(typeName !== undefined){
+              let productType = product.plantType.toLowerCase();
+              if(productType === typeName){
+                this.posts.push(product);
+              }
+              if(typeName === 'all'){
+                this.posts.push(product);
+              }
             }
+            //end check type
+            //check category
+            if(categoryName !== undefined){
+              let productCategory = product.plantCategory.toLowerCase();
+              if(productCategory === categoryName){
+                this.posts.push(product);
+              }
+              if(productCategory === 'all'){
+                this.posts.push(product);
+              }
+            }
+            //end check category
           }
         }
 
