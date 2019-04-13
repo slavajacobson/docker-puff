@@ -20,38 +20,38 @@ foreach($products as $product){
     //test only one
     $counter++;
     if($counter < 19){
-    $image1 = $product['gsx$image1']['$t'];
-    $image2 = $product['gsx$image2']['$t'];
-    $image3 = $product['gsx$image3']['$t'];
-    $images = [$image1,$image2,$image3];
-    $productName = $product['gsx$title']['$t'];
-    $vendorName = $product['gsx$vendor']['$t'];
-    $plantType = $product['gsx$planttype']['$t'];
-    $subCategory = $product['gsx$subcategory']['$t'];
-    $CBD = $product['gsx$cbd']['$t'];
-    $CBDMax = $product['gsx$cbd-max']['$t'];
-    $THC = $product['gsx$thc']['$t'];
-    $THCMax = $product['gsx$thc']['$t'];
-    $brandID = $product['gsx$brandid']['$t'];
-    $slug = strtolower($product['gsx$_cn6ca']['$t']);
-    $slug = str_replace(' ','-',$slug);
-    $brandPost = get_post($brandID);
+        $image1 = $product['gsx$image1']['$t'];
+        $image2 = $product['gsx$image2']['$t'];
+        $image3 = $product['gsx$image3']['$t'];
+        $images = [$image1,$image2,$image3];
+        $productName = $product['gsx$title']['$t'];
+        $vendorName = $product['gsx$vendor']['$t'];
+        $plantType = $product['gsx$planttype']['$t'];
+        $subCategory = $product['gsx$subcategory']['$t'];
+        $CBD = $product['gsx$cbd']['$t'];
+        $CBDMax = $product['gsx$cbd-max']['$t'];
+        $THC = $product['gsx$thc']['$t'];
+        $THCMax = $product['gsx$thc']['$t'];
+        $brandID = $product['gsx$brandid']['$t'];
+        $slug = strtolower($product['gsx$_cn6ca']['$t']);
+        $slug = str_replace(' ','-',$slug);
+        $brandPost = get_post($brandID);
 
-    $productArray = array(
-        'name' => $productName,
-        'vendorName' => $vendorName,
-        'plantType' => $plantType,
-        'subCategory' => $subCategory,
-        'CBD' => $CBD,
-        'CBDMax' => $CBDMax,
-        'THC' => $THC,
-        'THCMax' => $THCMax,
-        'brandID' => $brandID,
-        'slug' => $slug,
-        'brandPost' => $brandPost,
-        'images' => $images
-    );
-    array_push($productsArray,$productArray);
+        $productArray = array(
+            'name' => $productName,
+            'vendorName' => $vendorName,
+            'plantType' => $plantType,
+            'subCategory' => $subCategory,
+            'CBD' => $CBD,
+            'CBDMax' => $CBDMax,
+            'THC' => $THC,
+            'THCMax' => $THCMax,
+            'brandID' => $brandID,
+            'slug' => $slug,
+            'brandPost' => $brandPost,
+            'images' => $images
+        );
+        array_push($productsArray,$productArray);
     }
 }
 
