@@ -3,10 +3,23 @@
 	background-color: #e5e5e5
 	padding-top: 50px
 	min-height: 100vh
+	.filter-button
+		color: grey
+		border: 2px solid grey
+		padding: 5px 15px
+		border-radius: 5px
+		max-width: 75px
+		text-align: center
+	.hover-button
+		&:hover
+			cursor: pointer
+	.button-filter-type.active-filter
+		font-weight: 900
+
 	.panels
 		display: flex
 		flex-wrap: wrap
-		width: 90%
+		width: 100%
 		margin: 0 auto
 		.location
 			width: 100%
@@ -14,6 +27,19 @@
 			width: 25%
 			background-color: white
 			min-height: 100vh
+			padding-top: 1em
+			padding-bottom: 1em
+			padding-left: 2em
+			h5.title
+				font-family: $header
+				color: grey
+				font-size: 1.2em
+			h5.filter-title
+				font-family: $header
+				color: grey
+				font-size: 1.1em
+				padding-bottom: 1em
+				padding-top: 1em
 			.sub-panel
 			.filter-search
 				margin-top: 2em
@@ -22,6 +48,8 @@
 					padding: 5px 15px
 					border-radius: 5px
 					color: blue
+					&:hover
+						cursor: pointer
 		.right-panel
 			width: 70%
 			margin-left: 2.5%

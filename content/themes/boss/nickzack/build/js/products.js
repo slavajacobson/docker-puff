@@ -17,9 +17,16 @@ new Vue({
     }
   },
   methods:{
-    filter(filterType,filter){
+    filter(filterType,filter,event,typeOfFilter){
+      let target = $(event.target);
+      if(!target.hasClass("active-filter") && typeOfFilter === 'button'){
+        target.parent().find("span").removeClass("active-filter");
+        target.addClass("active-filter");
+      }
       let filterArray = {"filterType":filterType,"filter":filter};
       this.filterList[0][filterType] = filter;
+
+      
 
 
     

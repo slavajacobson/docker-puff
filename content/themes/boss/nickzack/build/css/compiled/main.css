@@ -195,17 +195,41 @@ button#searchsubmit {
   background-color: #e5e5e5;
   padding-top: 50px;
   min-height: 100vh; }
+  .page-view.products .filter-button {
+    color: grey;
+    border: 2px solid grey;
+    padding: 5px 15px;
+    border-radius: 5px;
+    max-width: 75px;
+    text-align: center; }
+  .page-view.products .hover-button:hover {
+    cursor: pointer; }
+  .page-view.products .button-filter-type.active-filter {
+    font-weight: 900; }
   .page-view.products .panels {
     display: flex;
     flex-wrap: wrap;
-    width: 90%;
+    width: 100%;
     margin: 0 auto; }
     .page-view.products .panels .location {
       width: 100%; }
     .page-view.products .panels .left-panel {
       width: 25%;
       background-color: white;
-      min-height: 100vh; }
+      min-height: 100vh;
+      padding-top: 1em;
+      padding-bottom: 1em;
+      padding-left: 2em; }
+      .page-view.products .panels .left-panel h5.title {
+        font-family: "Montserrat", sans-serif;
+        color: grey;
+        font-size: 1.2em; }
+      .page-view.products .panels .left-panel h5.filter-title {
+        font-family: "Montserrat", sans-serif;
+        color: grey;
+        font-size: 1.1em;
+        padding-bottom: 1em;
+        padding-top: 1em; }
       .page-view.products .panels .left-panel .filter-search {
         margin-top: 2em; }
         .page-view.products .panels .left-panel .filter-search span {
@@ -213,6 +237,8 @@ button#searchsubmit {
           padding: 5px 15px;
           border-radius: 5px;
           color: blue; }
+          .page-view.products .panels .left-panel .filter-search span:hover {
+            cursor: pointer; }
     .page-view.products .panels .right-panel {
       width: 70%;
       margin-left: 2.5%;
@@ -321,7 +347,8 @@ button#searchsubmit {
                     display: none; }
 
 .page-view.single-product {
-  background-color: #f2f2f2; }
+  background-color: #f2f2f2;
+  padding-bottom: 2em; }
   .page-view.single-product .product-top-info {
     background-color: white;
     width: 75%;
@@ -397,9 +424,35 @@ button#searchsubmit {
             .page-view.single-product .product-top-info .right-box .review-averages .critics .review-count p, .page-view.single-product .product-top-info .right-box .review-averages .users .review-count p {
               color: blue;
               font-size: 1.1em; }
+  .page-view.single-product .review-wrapper {
+    padding: 2em; }
+    .page-view.single-product .review-wrapper .header h5 {
+      font-size: 2em; }
+    .page-view.single-product .review-wrapper li {
+      list-style: none; }
+  .page-view.single-product .wp_ulike_general_class {
+    box-shadow: 0 0 0 1px #00AF87 inset; }
+    .page-view.single-product .wp_ulike_general_class.wp_ulike_is_liked {
+      box-shadow: 0 0 0 1px #87cf00 inset; }
+      .page-view.single-product .wp_ulike_general_class.wp_ulike_is_liked .count-box {
+        color: #87cf00; }
+    .page-view.single-product .wp_ulike_general_class .image-unlike {
+      color: red !important; }
+      .page-view.single-product .wp_ulike_general_class .image-unlike:after {
+        color: red !important; }
+    .page-view.single-product .wp_ulike_general_class .count-box {
+      color: #00AF87; }
+    .page-view.single-product .wp_ulike_general_class .wp_ulike_put_image::after {
+      content: '\f164' !important;
+      font-family: fontawesome;
+      color: #00AF87 !important;
+      font-size: 1.5em;
+      background: none; }
   .page-view.single-product .user-reviews#userReviews {
     width: 75%;
-    padding-left: 100px; }
+    margin-left: 100px;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.5); }
     .page-view.single-product .user-reviews#userReviews .comment-respond .acf-field[data-type="star_rating_field"] {
       display: none; }
     .page-view.single-product .user-reviews#userReviews li {
@@ -437,4 +490,179 @@ button#searchsubmit {
             font-family: "Muli", sans-serif; }
           .page-view.single-product .user-reviews#userReviews li article .right-side footer.comment-meta .entry-actions .comment-text-hide p {
             display: none !important; }
+  .page-view.single-product .critic-reviews#criticReviews {
+    background-color: white;
+    margin-top: 20px;
+    width: 75%;
+    margin-left: 100px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.5); }
+    .page-view.single-product .critic-reviews#criticReviews .review-wrapper {
+      display: flex;
+      flex-wrap: wrap; }
+      .page-view.single-product .critic-reviews#criticReviews .review-wrapper .header {
+        width: 100%;
+        padding-left: 2%; }
+      .page-view.single-product .critic-reviews#criticReviews .review-wrapper li {
+        width: 46%;
+        padding-left: 2%;
+        padding-right: 2%;
+        margin-top: 2em; }
+        .page-view.single-product .critic-reviews#criticReviews .review-wrapper li article .comment-wrapper {
+          border: 1px solid rgba(0, 0, 0, 0.5);
+          padding: 1em;
+          position: relative; }
+          .page-view.single-product .critic-reviews#criticReviews .review-wrapper li article .comment-wrapper:after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            border: 1px solid rgba(0, 0, 0, 0.5);
+            bottom: 0px;
+            left: 0px;
+            border-top-color: white;
+            border-left-color: white;
+            bottom: -14px;
+            left: 50px;
+            z-index: 999;
+            background-color: white;
+            transform: rotateZ(45deg); }
+          .page-view.single-product .critic-reviews#criticReviews .review-wrapper li article .comment-wrapper .top-side .image-and-title {
+            display: flex; }
+            .page-view.single-product .critic-reviews#criticReviews .review-wrapper li article .comment-wrapper .top-side .image-and-title .image {
+              width: 50px; }
+              .page-view.single-product .critic-reviews#criticReviews .review-wrapper li article .comment-wrapper .top-side .image-and-title .image img {
+                max-width: 50px; }
+            .page-view.single-product .critic-reviews#criticReviews .review-wrapper li article .comment-wrapper .top-side .image-and-title .title {
+              margin-left: 10px;
+              display: flex;
+              align-items: center; }
+              .page-view.single-product .critic-reviews#criticReviews .review-wrapper li article .comment-wrapper .top-side .image-and-title .title h5 {
+                font-size: 1.5em;
+                font-family: "Montserrat", sans-serif; }
+          .page-view.single-product .critic-reviews#criticReviews .review-wrapper li article .comment-wrapper .top-side .excerpt {
+            margin-left: 60px;
+            padding-bottom: 2em; }
+            .page-view.single-product .critic-reviews#criticReviews .review-wrapper li article .comment-wrapper .top-side .excerpt p {
+              font-family: "Muli", sans-serif; }
+          .page-view.single-product .critic-reviews#criticReviews .review-wrapper li article .comment-wrapper .bottom-side {
+            display: flex;
+            flex-wrap: wrap; }
+            .page-view.single-product .critic-reviews#criticReviews .review-wrapper li article .comment-wrapper .bottom-side .title {
+              width: 100%; }
+              .page-view.single-product .critic-reviews#criticReviews .review-wrapper li article .comment-wrapper .bottom-side .title h5 {
+                font-family: "Montserrat", sans-serif;
+                margin-left: 50px;
+                font-size: 1.5em;
+                font-weight: 100;
+                padding-bottom: 1em; }
+            .page-view.single-product .critic-reviews#criticReviews .review-wrapper li article .comment-wrapper .bottom-side .left-side {
+              width: 45%;
+              text-align: center; }
+              .page-view.single-product .critic-reviews#criticReviews .review-wrapper li article .comment-wrapper .bottom-side .left-side .average-rating p {
+                color: #00AF87;
+                font-size: 2em;
+                font-family: "Muli", sans-serif; }
+              .page-view.single-product .critic-reviews#criticReviews .review-wrapper li article .comment-wrapper .bottom-side .left-side .recommend p {
+                width: 50%;
+                margin: 0 auto;
+                margin-top: 10px;
+                margin-bottom: 10px; }
+              .page-view.single-product .critic-reviews#criticReviews .review-wrapper li article .comment-wrapper .bottom-side .left-side .yes-or-no p {
+                font-family: "Muli", sans-serif;
+                color: #00AF87;
+                text-transform: uppercase;
+                font-size: 1.2em; }
+            .page-view.single-product .critic-reviews#criticReviews .review-wrapper li article .comment-wrapper .bottom-side .right-side {
+              width: 45%; }
+              .page-view.single-product .critic-reviews#criticReviews .review-wrapper li article .comment-wrapper .bottom-side .right-side .rating-and-date {
+                margin: 0 auto;
+                float: right; }
+                .page-view.single-product .critic-reviews#criticReviews .review-wrapper li article .comment-wrapper .bottom-side .right-side .rating-and-date .ratings .rating {
+                  display: flex;
+                  margin-top: 5px;
+                  margin-bottom: 5px; }
+                  .page-view.single-product .critic-reviews#criticReviews .review-wrapper li article .comment-wrapper .bottom-side .right-side .rating-and-date .ratings .rating .rating-starts i {
+                    color: #00AF87; }
+                  .page-view.single-product .critic-reviews#criticReviews .review-wrapper li article .comment-wrapper .bottom-side .right-side .rating-and-date .ratings .rating .rating-name {
+                    margin-left: 20px; }
+        .page-view.single-product .critic-reviews#criticReviews .review-wrapper li article footer {
+          margin-top: 25px; }
+          .page-view.single-product .critic-reviews#criticReviews .review-wrapper li article footer .entry-actions {
+            display: flex;
+            justify-content: space-between; }
+            .page-view.single-product .critic-reviews#criticReviews .review-wrapper li article footer .entry-actions .author {
+              display: flex;
+              flex-direction: row-reverse; }
+              .page-view.single-product .critic-reviews#criticReviews .review-wrapper li article footer .entry-actions .author .comment-author {
+                display: flex;
+                align-items: center;
+                padding-left: 20px; }
+                .page-view.single-product .critic-reviews#criticReviews .review-wrapper li article footer .entry-actions .author .comment-author h5 {
+                  font-family: "Muli", sans-serif; }
+              .page-view.single-product .critic-reviews#criticReviews .review-wrapper li article footer .entry-actions .author .avatar-col img {
+                border-radius: 100%; }
+            .page-view.single-product .critic-reviews#criticReviews .review-wrapper li article footer .entry-actions .comment-text-hide p {
+              display: none; }
+  .page-view.single-product .leave-review#leaveReview {
+    margin-top: 20px; }
+    .page-view.single-product .leave-review#leaveReview #respond {
+      border: 1px solid rgba(0, 0, 0, 0.5);
+      width: 75%;
+      margin-left: 100px;
+      background-color: white; }
+      .page-view.single-product .leave-review#leaveReview #respond #reply-title {
+        padding: 1em; }
+      .page-view.single-product .leave-review#leaveReview #respond form {
+        padding: 0px 2em;
+        margin-top: 0px;
+        padding-bottom: 2em;
+        display: flex;
+        flex-direction: column; }
+        .page-view.single-product .leave-review#leaveReview #respond form .logged-in-as {
+          order: 0; }
+        .page-view.single-product .leave-review#leaveReview #respond form .acf-field:nth-child(4) {
+          order: 1; }
+        .page-view.single-product .leave-review#leaveReview #respond form .comment-form-comment {
+          order: 2; }
+        .page-view.single-product .leave-review#leaveReview #respond form .acf-field {
+          order: 3; }
+        .page-view.single-product .leave-review#leaveReview #respond form .acf-field {
+          order: 3; }
+        .page-view.single-product .leave-review#leaveReview #respond form .acf-field {
+          order: 3; }
+        .page-view.single-product .leave-review#leaveReview #respond form .acf-field {
+          order: 3; }
+        .page-view.single-product .leave-review#leaveReview #respond form .acf-field {
+          order: 3; }
+        .page-view.single-product .leave-review#leaveReview #respond form .form-submit {
+          order: 4; }
+  .page-view.single-product .log-in {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    background-color: white;
+    margin-left: 100px;
+    width: 75%;
+    margin-top: 20px; }
+    .page-view.single-product .log-in .title {
+      padding: 2em;
+      padding-top: 1em;
+      padding-bottom: 1em; }
+      .page-view.single-product .log-in .title p {
+        color: black;
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.5em; }
+    .page-view.single-product .log-in form {
+      padding-left: 2em;
+      padding-bottom: 2em; }
+      .page-view.single-product .log-in form .login-username, .page-view.single-product .log-in form .login-password {
+        width: 260px;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+        margin-bottom: 10px; }
+        .page-view.single-product .log-in form .login-username label, .page-view.single-product .log-in form .login-password label {
+          display: flex;
+          align-items: center;
+          color: black;
+          font-family: "Muli", sans-serif; }
 

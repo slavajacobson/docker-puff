@@ -11,18 +11,18 @@
 		<h5 class = 'title'>FILTERS</h5>
 		<h5 class = 'filter-title'>TYPE</h5>
 		<div class = 'type-filters'>
-			<span class = 'all indica' data-type = 'all' @click="filter('type','all')">All</span>
-			<span class = 'indica' data-type = 'indica' @click ="filter('type','indica')">Indica</span>
-			<span class = 'hybrid' data-type = 'hybrid' @click ="filter('type','hybrid')" >Hybrid</span>
-			<span class = 'sativa' data-type = 'sativa' @click ="filter('type','sativa')" >Sativa</span>
+			<span class = 'filter-button hover-button button-filter-type' data-type = 'all' @click="filter('type','all',$event,'button')">All</span>
+			<span class = 'indica hover-button button-filter-type' data-type = 'indica' @click ="filter('type','indica',$event,'button')">Indica</span>
+			<span class = 'hybrid hover-button button-filter-type' data-type = 'hybrid' @click ="filter('type','hybrid',$event,'button')" >Hybrid</span>
+			<span class = 'sativa hover-button button-filter-type' data-type = 'sativa' @click ="filter('type','sativa',$event,'button')" >Sativa</span>
 		</div>
 		<h5 class = 'filter-title'>CATEGORIES</h5>
 		<div class = 'category-filters'>
-			<span class = 'sativa' data-type = 'sativa' @click ="filter('category','sativa')" >All</span>
-			<span class = 'sativa' data-type = 'sativa' @click ="filter('category','flower')" >Flower</span>
-			<span class = 'sativa' data-type = 'sativa' @click ="filter('category','pre-roll')" >Pre-Roll</span>
-			<span class = 'sativa' data-type = 'sativa' @click ="filter('category','oil-and-capsules')">Oil and Capsules</span>
-			<span class = 'sativa' data-type = 'sativa' @click ="filter('category','seeds')" >Seeds</span>
+			<span class = 'filter-button hover-button button-filter-type' data-type = 'sativa' @click ="filter('category','sativa',$event,'button')" >All</span>
+			<span class = 'filter-button hover-button button-filter-type' data-type = 'sativa' @click ="filter('category','flower',$event,'button')" >Flower</span>
+			<span class = 'filter-button hover-button button-filter-type' data-type = 'sativa' @click ="filter('category','pre-roll',$event,'button')" >Pre-Roll</span>
+			<span class = 'filter-button hover-button button-filter-type' data-type = 'sativa' @click ="filter('category','oil-and-capsules',$event,'button')">Oil and Capsules</span>
+			<span class = 'filter-button hover-button button-filter-type' data-type = 'sativa' @click ="filter('category','seeds',$event,'button')" >Seeds</span>
 
 		</div>
 		<div class = 'filter-search'>

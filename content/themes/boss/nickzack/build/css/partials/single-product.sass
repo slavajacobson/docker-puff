@@ -3,6 +3,7 @@ $containerWidth: 75%
 $containerPadding: 100px
 .page-view.single-product
 	background-color: #f2f2f2
+	padding-bottom: 2em
 	.product-top-info
 		background-color: white
 		width: $containerWidth
@@ -96,11 +97,37 @@ $containerPadding: 100px
 							color: blue
 							font-size: 1.1em
 
+	.review-wrapper
+		padding: 2em
+		.header
+			h5
+				font-size: 2em
+		li
+			list-style: none
+	.wp_ulike_general_class
+		box-shadow: 0 0 0 1px $brand inset
+		&.wp_ulike_is_liked
+			box-shadow: 0 0 0 1px #87cf00 inset
+			.count-box
+				color: #87cf00
 
+		.image-unlike
+			color: red !important
+			&:after
+				color: red !important
+		.count-box
+			color: $brand
+		.wp_ulike_put_image::after
+			content: '\f164' !important
+			font-family: fontawesome
+			color: $brand !important
+			font-size: 1.5em
+			background: none	
 	.user-reviews#userReviews
-
 		width: $containerWidth
-		padding-left: $containerPadding
+		margin-left: $containerPadding
+		background-color: white
+		border: 1px solid rgba(0,0,0,0.5)
 		.comment-respond
 			.acf-field[data-type="star_rating_field"]
 				display: none
@@ -150,3 +177,201 @@ $containerPadding: 100px
 								.wpulike-heart
 									.wp_ulike_general_class
 										button
+	.critic-reviews#criticReviews
+		background-color: white
+		margin-top: 20px
+		width: $containerWidth
+		margin-left: $containerPadding
+		margin-bottom: 20px
+		border: 1px solid rgba(0,0,0,0.5)
+		.review-wrapper
+			display: flex
+			flex-wrap: wrap
+			.header
+				width: 100%
+				padding-left: 2%
+
+			li
+				width: 46%
+				padding-left: 2%
+				padding-right: 2%
+				margin-top: 2em
+				article
+					.comment-wrapper
+						border: 1px solid rgba(0,0,0,0.5)
+						padding: 1em
+						position: relative
+						&:after
+							content: ''
+							position: absolute
+							width: 25px
+							height: 25px
+							border: 1px solid rgba(0,0,0,0.5)
+							bottom: 0px
+							left: 0px
+							border-top-color: white
+							border-left-color: white
+							bottom: -14px
+							left: 50px
+							z-index: 999
+							background-color: white
+							transform: rotateZ(45deg)
+						&:before
+							
+
+
+						.top-side
+							.image-and-title
+								display: flex
+								.image
+									width: 50px
+									img
+										max-width: 50px
+								.title
+									margin-left: 10px
+									display: flex
+									align-items: center
+									h5
+										font-size: 1.5em
+										font-family: $header
+							.excerpt
+								margin-left: 60px
+								padding-bottom: 2em
+								p
+									font-family: $para
+						.bottom-side
+							display: flex
+							flex-wrap: wrap
+							.title
+								width: 100%
+								h5
+									font-family: $header
+									margin-left: 50px
+									font-size: 1.5em
+									font-weight: 100
+									padding-bottom: 1em
+							.left-side
+								width: 45%
+								text-align: center
+								.average-rating
+									p
+										color: $brand
+										font-size: 2em
+										font-family: $para
+								.recommend
+									p
+										width: 50%
+										margin: 0 auto
+										margin-top: 10px
+										margin-bottom: 10px
+								.yes-or-no
+									p
+										font-family: $para
+										color: $brand
+										text-transform: uppercase
+										font-size: 1.2em
+							.right-side
+								width: 45%
+								.rating-and-date
+									margin: 0 auto
+									float: right
+									.ratings
+										.rating
+											display: flex
+											margin-top: 5px
+											margin-bottom: 5px
+											.rating-starts
+												i
+													color: $brand
+											.rating-name
+												margin-left: 20px
+												p
+
+					footer
+						margin-top: 25px
+						.entry-actions
+							display: flex
+							justify-content: space-between
+							.author
+								display: flex
+								flex-direction: row-reverse
+								.comment-author
+									display: flex
+									align-items: center
+									padding-left: 20px
+									h5
+										font-family: $para
+								.avatar-col
+									img
+										border-radius: 100%
+							.comment-text-hide
+								p
+									display: none
+								.wpulike
+									.wp_ulike_general_class
+										button
+	.leave-review#leaveReview
+
+		margin-top: 20px
+		#respond
+			border: 1px solid rgba(0,0,0,0.5)
+			width: $containerWidth
+			margin-left: $containerPadding
+			background-color: white
+			#reply-title
+				padding: 1em
+			form
+				padding: 0px 2em
+				margin-top: 0px
+				padding-bottom: 2em
+				display: flex
+				flex-direction: column
+				.logged-in-as
+					order: 0
+				.acf-field:nth-child(4)
+					order: 1
+				.comment-form-comment
+					order: 2
+				.acf-field
+					order: 3
+				.acf-field
+					order: 3
+				.acf-field
+					order: 3
+				.acf-field
+					order: 3
+				.acf-field
+					order: 3
+				.form-submit
+					order: 4
+
+
+	.log-in
+		border: 1px solid rgba(0,0,0,0.5)
+		background-color: white
+		margin-left: $containerPadding
+		width: $containerWidth
+		margin-top: 20px
+		.title
+			padding: 2em
+			padding-top: 1em
+			padding-bottom: 1em
+			p
+				color: black
+				font-family: $header
+				font-size: 1.5em
+		form
+			padding-left: 2em
+			padding-bottom: 2em
+			.login-username,.login-password
+				width: 260px
+				display: flex
+				justify-content: space-between
+				margin-top: 10px
+				margin-bottom: 10px
+				label
+					display: flex
+					align-items: center
+					color: black
+					font-family: $para
+

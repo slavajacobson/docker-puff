@@ -37,7 +37,26 @@ $comments_args = array(
          </textarea>
          </p>',
 );
-comment_form( $comments_args );
-	?>
+
+$loggedIn = is_user_logged_in();
+if($loggedIn){
+        ?>
+        <div class = 'leave-review' id = 'leaveReview'>
+                <?php comment_form( $comments_args ); ?>
+        </div>
+        <?php
+}
+else{
+        ?>
+        <div class = 'log-in' id = 'logInToReview'>
+                <div class = 'title'>
+                        <p>Please Login to leave a review</p>
+                </div>
+                <?php wp_login_form(array('label_username' => 'Username')); ?>
+        </div>
+        <?php
+       
+}
+ ?>
 </div>
 
