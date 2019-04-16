@@ -2,6 +2,7 @@
 
 
 ?>
+
 <div class = 'critic-reviews' id = 'criticReviews'>
 	<div class = 'review-wrapper'>
 	<?php
@@ -10,8 +11,8 @@
 	<div class = 'header'>
 		<h5>Critic Reviews <?php echo '('.$numOfUserReviews.')';?></h5>
 	</div>
-<?php
-$comments = wp_list_comments(
+	<?php
+	$comments = wp_list_comments(
 	  array(
 	  	'callback'	  => 'single_product_critic_comment',
 	    'per_page' => -1, //Allow comment pagination
@@ -20,8 +21,8 @@ $comments = wp_list_comments(
 	  $reviews
 	);
 
-?>
-</div>
+	?>
+	</div>
 </div>
 <div class = 'user-reviews' id = "userReviews">
 	<div class = 'review-wrapper'>
@@ -31,8 +32,8 @@ $comments = wp_list_comments(
 	<div class = 'header'>
 		<h5>Audience Reviews <?php echo '('.$numOfUserReviews.')';?></h5>
 	</div>
-<?php
-$comments = wp_list_comments(
+	<?php
+	$comments = wp_list_comments(
 	  array(
 	  	'callback'	  => 'single_product_user_comment',
 	    'per_page' => -1, //Allow comment pagination
@@ -41,6 +42,7 @@ $comments = wp_list_comments(
 	  $reviews
 	);
 
-?>
+	?>
+	</div>
 </div>
-</div>
+

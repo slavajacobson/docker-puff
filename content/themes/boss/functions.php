@@ -209,10 +209,24 @@ function sassStyles() {
     wp_enqueue_script('vue','https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js',array(),'1.0',true);
     wp_enqueue_script('axios','https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js',array(),'1.0',true);
     wp_enqueue_script('GSAP','https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js',array(),'1.0',true);
+    wp_enqueue_script('Swiper JS','https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js',array(),'1.0',true);
+    wp_enqueue_style('Swiper CSS','https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.css');
 
     
 }
 add_action( 'wp_enqueue_scripts', 'sassStyles' );
 
-
+//most viewed posts
+function setPostViews($postID) {
+    $countKey = 'post_views_count';
+    $count = get_post_meta($postID, $countKey, true);
+    if($count==''){
+        $count = 0;
+        delete_post_meta($postID, $countKey);
+        add_post_meta($postID, $countKey, '0');
+    }else{
+        $count++;
+        update_post_meta($postID, $countKey, $count);
+    }
+}
 include_once(get_template_directory().'/nickzack/nickzack-functions.php');

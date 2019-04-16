@@ -17,23 +17,54 @@
 </div> <!-- #inner-wrap -->
 
 </div><!-- #main-wrap (Wrap For Mobile) -->
-
-<footer id="colophon" role="contentinfo">
-
-	<?php get_template_part( 'template-parts/footer-widgets' ); ?>
-
-	<div class="footer-inner-bottom">
-
-		<div class="footer-inner">
-			<?php get_template_part( 'template-parts/footer-copyright' ); ?>
-			<?php get_template_part( 'template-parts/footer-links' ); ?>
-		</div><!-- .footer-inner -->
-
-	</div><!-- .footer-inner-bottom -->
-
-	<?php do_action( 'bp_footer' ) ?>
-
-</footer><!-- #colophon -->
+<footer>
+	<div class = 'top'>
+		<div class = 'panel'>
+			<a href = '/'>
+				<img src = 'http://burlingtonhoteliow.com/wp/wp-content/uploads/2017/08/image1-28leosk.png'>
+			</a>
+			<p>Candid Canadian Cannabis from your fellow smoker</p>
+		</div>
+		<div class = 'panel'>
+			<h5 class = 'footer-title'>Company</h5>
+			<ul>
+				<li><a href = '#'>Contact</a></li>
+				<li><a href = '#'>About Us</a></li>
+				<li><a href = '#'>Careers</a></li>
+				<li><a href = '#'>Investors</a></li>
+			</ul>
+		</div>
+		<div class = 'panel'>
+			<h5 class = 'footer-title'>Resources</h5>
+			<ul>
+				<li><a href = '#'>FAQ</a></li>
+				<li><a href = '#'>Privacy Policy</a></li>
+				<li><a href = '#'>Terms of Use</a></li>
+			</ul>
+		</div>
+		<div class = 'panel'>
+			<h5 class = 'footer-title'>Business</h5>
+			<ul>
+				<li><a href = '#'>Claim your business</a></li>
+				<li><a href = '#'>Advertise</a></li>
+			</ul>
+		</div>
+		<div class = 'panel'>
+			<h5 class = 'footer-title'>Popular Tags</h5>
+			<div class = 'popular-tags'>
+				<a href = '#'>sativa</a>
+				<a href = '#'>hybrid</a>
+				<a href = '#'>indica</a>
+				<a href = '#'>new</a>
+				<a href = '#'>top 10 strains</a>
+				<a href = '#'>cbd</a>
+			</div>
+		</div>
+	</div>
+	<div class = 'bottom'>
+		<p>&copy; 2019 Puff Advisor</p>
+	</div>
+</footer>
 </div><!-- #right-panel-inner -->
 </div><!-- #right-panel -->
 

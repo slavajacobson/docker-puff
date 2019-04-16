@@ -1,9 +1,11 @@
 <?php 
 $postID = $post -> ID;
+setPostViews($postID);
 ?>
+
 <div class = 'page-view single-product'>
 	<!-- REVIEW AVERAGE -->
-	<?php
+    <?php
 	//script to calculate averages
 	include(locate_template('nickzack/build/html/partials/single-product-partials/single-product-get-averages.php'));
 	//first panel.. product info
@@ -58,5 +60,7 @@ else{
        
 }
  ?>
+
+
 </div>
 

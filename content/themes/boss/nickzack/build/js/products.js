@@ -1,5 +1,4 @@
 jQuery(document).ready(function($){
-
 new Vue({
   el: '.products',
   data () {
@@ -25,11 +24,6 @@ new Vue({
       }
       let filterArray = {"filterType":filterType,"filter":filter};
       this.filterList[0][filterType] = filter;
-
-      
-
-
-    
     },
     filterResults(){
       this.getPosts(this.filterList);

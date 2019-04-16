@@ -1,6 +1,9 @@
+@import '../partials/variables.sass'
 $introHeight: 50vh
 $green: #57b059
+$blue: #2397da
 .page-view.homepage
+	background-color: #e5e5e5
 	.first-row
 		position: relative
 		.background
@@ -36,20 +39,18 @@ $green: #57b059
 			h1
 				color: white
 				font-size: 3em
+				font-family: $header
 			p
 				color: white
 				width: 50%
 				margin: 0 auto
 				padding-top: 1em
 				padding-bottom: 1em
-			.socials
-				i
-					font-size: 3em
-					margin-left: 20px
-					margin-right: 20px
+				font-size: 1.5em
+				font-family: $para
 	.second-row
 		width: 100%
-		background-color: #e7e7e7
+		background-color: #e5e5e5
 		padding-top: 1em
 		padding-bottom: 1em
 		ul
@@ -71,9 +72,145 @@ $green: #57b059
 					width: 55px
 
 					i
-						color: $green
-						font-size: 2.5em
+						color: $brand
+						font-size: 4em
 					p
-						color: $green
+						color: $brand
+						font-size: 1.2em
+						font-family: $para
+	.title-and-view-all
+		display: flex
+		justify-content: space-between
+		h5
+			font-family: $header
+			font-size: 1.5em
+			
+		a
+			color: $blue
+			font-size: 1em
+			font-family: $para
+			padding-right: 2%
+	.third-row.categories
+		width: 90%
+		margin-left: 10%
+		padding-top: 2em
+		padding-bottom: 2em
+		.categories-wrapper
+			display: flex
+			flex-wrap: wrap
+			a
+				width: 20%
+				display: flex
+				align-items: center
+				justify-content: center
+				color: white
+				font-family: $para
+				font-weight: 700
+				font-size: 1.5em
+				margin-left: 1%
+				margin-right: 1%
+				margin-bottom: 1%
+				margin-top: 1%
+				background-color: grey
+				min-height: 125px
+				&:nth-child(1)
+					margin-left: 0px
+				&:nth-child(5)
+					margin-left: 0px
+				
+	.carousels
+		padding-bottom: 3em
+		.carousel-navigation
+			display: flex
+			justify-content: center
+			margin-top: 20px
+			div
+				background-color: white
+				padding: 10px 20px
+				border: 1px solid grey
+				display: flex
+				align-items: center
+				justify-content: center
+				font-family: $para
+				font-size: 2em
+				text-transform: uppercase
+				&:hover
+					cursor: pointer
+			.previous
+				border-top-left-radius: 5px
+				border-bottom-left-radius: 5px
+			.next
+				border-top-right-radius: 5px
+				border-bottom-right-radius: 5px
+
+		.swiper-container
+			.swiper-wrapper
+				.swiper-slide
+					background-color: white
+					text-align: center
+					min-height: 504px
+					.product-info
+						.product-title
+							.product-name
+								padding-top: 10px
+								a
+									h5
+										font-family: $header
+										font-size: 2em
+										width: 50%
+										margin: 0 auto
+										text-align: center
+							.product-brand
+								h5
+									text-align: center
+									font-family: $para
+									a
+										color: $blue
+							.category
+								padding-bottom: 15px
+								span
+									font-size: 1.2em
+									font-family: $para
+
+							.type
+								padding-bottom: 20px
+								span
+
+							.product-image
+								a
+									img
+										max-width: 125px
+						.product-info-under-title
+							.brand-and-type
+								color: black
+								p
+								.mini-title
+									color: black
+									font-family: $para
+									font-weight: 700
+									padding-right: 10px
+									font-size: 1.2em
+								p.thc
+									span.mini-title
+								p.cb
+									.mini-title
+							.score
+								display: flex
+								flex-wrap: wrap
+								padding-top: 20px
+								padding-bottom: 20px
+								.mini-title
+									display: none
+								.review-box
+									width: 50%
+									h5
+									.critic,.user
+										.top
+											.image
+												img
+													max-width: 50px
+											p
+										.bottom
+											p
 
 

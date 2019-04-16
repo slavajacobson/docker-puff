@@ -1,350 +1,53 @@
-body {
-  font-size: 14px !important; }
-
-body:not(.left-menu-open) #right-panel-inner {
-  margin-left: 0px !important; }
-
-.header-links {
-  display: none; }
-
-#mastlogo {
-  background-color: white !important;
-  border: none !important;
-  height: 74px !important;
-  padding: 0px !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 200px !important;
-  display: none !important; }
-  #mastlogo a {
-    display: flex;
-    justify-content: center;
-    align-items: center; }
-    #mastlogo a img {
-      width: 50% !important; }
-
-#left-panel {
-  display: none !important; }
-
-#right-panel-inner {
-  margin-left: 0px !important; }
-
-#right-panel {
-  margin-top: 100px; }
-
-header#masthead {
-  background-color: white; }
-
-header {
-  z-index: 99999 !important; }
-  header .header-wrap {
-    display: flex;
-    flex-direction: column-reverse; }
-    header .header-wrap .links {
-      padding-bottom: 10px; }
-      header .header-wrap .links ul {
-        display: flex;
-        width: 95%;
-        float: right; }
-        header .header-wrap .links ul li {
-          margin-left: 20px; }
-          header .header-wrap .links ul li:nth-child(1) {
-            margin-left: 0px; }
-    header .header-wrap .header-outher {
-      margin-left: 0px; }
-      header .header-wrap .header-outher .header-inner {
-        padding-left: 0px; }
-        header .header-wrap .header-outher .header-inner .middle-col {
-          display: none !important; }
-        header .header-wrap .header-outher .header-inner .search-form {
-          width: 100% !important; }
-        header .header-wrap .header-outher .header-inner #logo {
-          width: 200px !important;
-          position: relative;
-          display: flex;
-          align-items: center;
-          height: 74px; }
-          header .header-wrap .header-outher .header-inner #logo a {
-            width: 100%;
-            height: 50px;
-            display: block; }
-            header .header-wrap .header-outher .header-inner #logo a img {
-              width: 100%;
-              height: 100%;
-              object-fit: contain; }
-
-.left-col .search-wrap {
-  width: 100% !important; }
-
-button#searchsubmit {
-  float: left; }
-
-.search-wrap input[type="text"] {
-  padding-left: 50px; }
-
-.header-inner {
-  background-color: white !important; }
-
-button#searchsubmit {
-  color: #737373 !important; }
-
-.search-wrap {
-  background-color: white !important; }
-
-#colophon {
-  display: none; }
-
-.hybrid {
-  color: green;
-  border: 2px solid green;
-  padding: 5px 15px;
-  border-radius: 5px;
-  max-width: 75px;
-  text-align: center; }
-
-.sativa {
-  color: orange;
-  border: 2px solid orange;
-  padding: 5px 15px;
-  border-radius: 5px;
-  max-width: 75px;
-  text-align: center; }
-
-.indica {
-  color: purple;
-  border: 2px solid purple;
-  padding: 5px 15px;
-  border-radius: 5px;
-  max-width: 75px;
-  text-align: center; }
-
-.page-view.homepage .first-row {
-  position: relative; }
-  .page-view.homepage .first-row .background {
-    position: absolute;
-    z-index: 9;
-    height: 50vh;
-    width: 100vw;
-    background-image: url("https://xshyfc.com/wp-content/uploads/data/2018/2/20/Weed-Plants-Wallpaperweed-plants-wallpaper-1920x1080-720p-PIC-WPXH350425.jpg"); }
-    .page-view.homepage .first-row .background:after {
-      content: '';
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      width: 100%;
-      height: 100%;
-      background-color: black;
-      opacity: 0.8; }
-    .page-view.homepage .first-row .background .image img {
-      height: 100%;
-      width: 100%; }
-  .page-view.homepage .first-row .content {
-    position: relative;
-    height: 50vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    z-index: 99;
-    color: white;
-    width: 85%;
+footer {
+  padding-top: 50px; }
+  footer .top {
+    padding-bottom: 50px;
+    width: 90%;
     margin: 0 auto;
-    text-align: center; }
-    .page-view.homepage .first-row .content h1 {
-      color: white;
-      font-size: 3em; }
-    .page-view.homepage .first-row .content p {
-      color: white;
-      width: 50%;
-      margin: 0 auto;
-      padding-top: 1em;
-      padding-bottom: 1em; }
-    .page-view.homepage .first-row .content .socials i {
-      font-size: 3em;
-      margin-left: 20px;
-      margin-right: 20px; }
-
-.page-view.homepage .second-row {
-  width: 100%;
-  background-color: #e7e7e7;
-  padding-top: 1em;
-  padding-bottom: 1em; }
-  .page-view.homepage .second-row ul {
-    display: flex;
-    justify-content: center; }
-    .page-view.homepage .second-row ul li {
-      margin-left: 2em;
-      margin-right: 2em; }
-      .page-view.homepage .second-row ul li:nth-child(1) {
-        margin-left: 0px; }
-      .page-view.homepage .second-row ul li:nth-last-child(1) {
-        margin-right: 0px; }
-      .page-view.homepage .second-row ul li a {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 55px; }
-        .page-view.homepage .second-row ul li a i {
-          color: #57b059;
-          font-size: 2.5em; }
-        .page-view.homepage .second-row ul li a p {
-          color: #57b059; }
-
-.page-view.products {
-  background-color: #e5e5e5;
-  padding-top: 50px;
-  min-height: 100vh; }
-  .page-view.products .filter-button {
-    color: grey;
-    border: 2px solid grey;
-    padding: 5px 15px;
-    border-radius: 5px;
-    max-width: 75px;
-    text-align: center; }
-  .page-view.products .hover-button:hover {
-    cursor: pointer; }
-  .page-view.products .button-filter-type.active-filter {
-    font-weight: 900; }
-  .page-view.products .panels {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    margin: 0 auto; }
-    .page-view.products .panels .location {
-      width: 100%; }
-    .page-view.products .panels .left-panel {
-      width: 25%;
-      background-color: white;
-      min-height: 100vh;
-      padding-top: 1em;
-      padding-bottom: 1em;
-      padding-left: 2em; }
-      .page-view.products .panels .left-panel h5.title {
-        font-family: "Montserrat", sans-serif;
-        color: grey;
-        font-size: 1.2em; }
-      .page-view.products .panels .left-panel h5.filter-title {
-        font-family: "Montserrat", sans-serif;
-        color: grey;
+    display: flex; }
+    footer .top .panel {
+      width: 25%; }
+      footer .top .panel a img {
+        max-width: 200px; }
+      footer .top .panel p {
+        color: white; }
+      footer .top .panel h5.footer-title {
+        color: #00AF87;
+        font-size: 1.6em;
+        font-family: "Muli", sans-serif;
+        font-weight: 900;
+        padding-bottom: 5px; }
+      footer .top .panel ul {
+        padding-left: 20px; }
+        footer .top .panel ul li {
+          padding-top: 5px;
+          padding-bottom: 5px; }
+          footer .top .panel ul li a {
+            color: white;
+            font-family: "Muli", sans-serif;
+            font-size: 1em;
+            font-weight: 100; }
+      footer .top .panel:nth-child(1) p {
+        width: 65%;
         font-size: 1.1em;
-        padding-bottom: 1em;
-        padding-top: 1em; }
-      .page-view.products .panels .left-panel .filter-search {
-        margin-top: 2em; }
-        .page-view.products .panels .left-panel .filter-search span {
-          border: 2px solid blue;
-          padding: 5px 15px;
-          border-radius: 5px;
-          color: blue; }
-          .page-view.products .panels .left-panel .filter-search span:hover {
-            cursor: pointer; }
-    .page-view.products .panels .right-panel {
-      width: 70%;
-      margin-left: 2.5%;
-      position: relative;
-      min-height: 100vh; }
-      .page-view.products .panels .right-panel .loader-wrapper {
-        position: absolute;
-        height: 100%;
-        width: 100%; }
-      .page-view.products .panels .right-panel ul {
-        z-index: 9999;
-        position: relative;
-        background-color: #e5e5e5; }
-        .page-view.products .panels .right-panel ul li.product {
-          background-color: white;
-          display: flex;
-          border: 1px solid black;
-          margin-bottom: 0.35em;
-          padding-top: 1em; }
-          .page-view.products .panels .right-panel ul li.product .product-image {
-            width: 200px;
-            padding-left: 2em;
-            padding-right: 2em; }
-            .page-view.products .panels .right-panel ul li.product .product-image a {
-              display: block;
-              display: flex;
-              align-items: center; }
-            .page-view.products .panels .right-panel ul li.product .product-image img {
-              width: 100%; }
-          .page-view.products .panels .right-panel ul li.product .product-info {
-            width: calc(100% - 200px);
-            flex-wrap: wrap; }
-            .page-view.products .panels .right-panel ul li.product .product-info .product-title {
-              width: 100%; }
-              .page-view.products .panels .right-panel ul li.product .product-info .product-title .product-name a h5 {
-                font-size: 1.7em;
-                text-transform: uppercase;
-                font-family: "Montserrat", sans-serif; }
-              .page-view.products .panels .right-panel ul li.product .product-info .product-title .product-brand h5 {
-                padding-bottom: 10px; }
-                .page-view.products .panels .right-panel ul li.product .product-info .product-title .product-brand h5 a {
-                  color: #338eec; }
-                  .page-view.products .panels .right-panel ul li.product .product-info .product-title .product-brand h5 a:hover {
-                    color: #00AF87; }
-            .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title {
-              display: flex;
-              width: 100%; }
-              .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel {
-                width: 33%; }
-                .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel .mini-title {
-                  color: black;
-                  font-family: "Muli", sans-serif;
-                  font-weight: 800;
-                  font-size: 1.1em;
-                  padding-right: 20px; }
-                .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel.package {
-                  position: relative; }
-                  .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel.package:after {
-                    content: '';
-                    position: absolute;
-                    right: 50px;
-                    height: 100%;
-                    width: 1px;
-                    background-color: black;
-                    top: 0px; }
-                .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel.brand-and-type {
-                  position: relative; }
-                  .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel.brand-and-type:after {
-                    content: '';
-                    position: absolute;
-                    right: 50px;
-                    height: 100%;
-                    width: 1px;
-                    background-color: black;
-                    top: 0px; }
-                  .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel.brand-and-type p.plant-type {
-                    margin-bottom: 10px; }
-                  .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel.brand-and-type p.thc {
-                    color: black; }
-                  .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel.brand-and-type p.cbd {
-                    color: black; }
-                .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel.score {
-                  display: flex; }
-                  .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel.score .user-reviews {
-                    padding-right: 2em; }
-                  .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel.score .top {
-                    display: flex;
-                    padding-top: 15px; }
-                    .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel.score .top .image img {
-                      max-width: 50px;
-                      padding-right: 0.3em; }
-                    .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel.score .top p {
-                      display: flex;
-                      align-items: center;
-                      font-family: "Montserrat", sans-serif;
-                      color: black;
-                      font-weight: 600;
-                      font-size: 2em; }
-                  .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel.score .bottom {
-                    padding-top: 5px; }
-                    .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel.score .bottom p {
-                      text-align: center;
-                      font-family: "Muli", sans-serif;
-                      color: black; }
-                  .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel.score .mini-title {
-                    display: none; }
+        font-family: "Muli", sans-serif; }
+      footer .top .panel .popular-tags a {
+        float: left;
+        margin: 5px;
+        color: black;
+        font-family: "Muli", sans-serif;
+        background-color: white;
+        padding: 10px 25px;
+        border-radius: 25px;
+        font-size: 1.1em; }
+  footer .bottom {
+    border-top: 2px solid rgba(255, 255, 255, 0.5);
+    padding-top: 30px;
+    padding-bottom: 30px; }
+    footer .bottom p {
+      color: white;
+      width: 90%;
+      margin: 0 auto; }
 
 .page-view.single-product {
   background-color: #f2f2f2;
@@ -666,3 +369,460 @@ button#searchsubmit {
           color: black;
           font-family: "Muli", sans-serif; }
 
+
+body {
+  font-size: 14px !important; }
+
+body:not(.left-menu-open) #right-panel-inner {
+  margin-left: 0px !important; }
+
+.header-links {
+  display: none; }
+
+#mastlogo {
+  background-color: white !important;
+  border: none !important;
+  height: 74px !important;
+  padding: 0px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px !important;
+  display: none !important; }
+  #mastlogo a {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    #mastlogo a img {
+      width: 50% !important; }
+
+#left-panel {
+  display: none !important; }
+
+#right-panel-inner {
+  margin-left: 0px !important; }
+
+#right-panel {
+  margin-top: 100px; }
+
+header#masthead {
+  background-color: white; }
+
+header {
+  z-index: 99999 !important; }
+  header .header-wrap {
+    display: flex;
+    flex-direction: column-reverse; }
+    header .header-wrap .links {
+      padding-bottom: 10px; }
+      header .header-wrap .links ul {
+        display: flex;
+        width: 95%;
+        float: right; }
+        header .header-wrap .links ul li {
+          margin-left: 20px; }
+          header .header-wrap .links ul li:nth-child(1) {
+            margin-left: 0px; }
+    header .header-wrap .header-outher {
+      margin-left: 0px; }
+      header .header-wrap .header-outher .header-inner {
+        padding-left: 0px; }
+        header .header-wrap .header-outher .header-inner .middle-col {
+          display: none !important; }
+        header .header-wrap .header-outher .header-inner .search-form {
+          width: 100% !important; }
+        header .header-wrap .header-outher .header-inner #logo {
+          width: 200px !important;
+          position: relative;
+          display: flex;
+          align-items: center;
+          height: 74px; }
+          header .header-wrap .header-outher .header-inner #logo a {
+            width: 100%;
+            height: 50px;
+            display: block; }
+            header .header-wrap .header-outher .header-inner #logo a img {
+              width: 100%;
+              height: 100%;
+              object-fit: contain; }
+
+.left-col .search-wrap {
+  width: 100% !important; }
+
+button#searchsubmit {
+  float: left; }
+
+.search-wrap input[type="text"] {
+  padding-left: 50px; }
+
+.header-inner {
+  background-color: white !important; }
+
+button#searchsubmit {
+  color: #737373 !important; }
+
+.search-wrap {
+  background-color: white !important; }
+
+#colophon {
+  display: none; }
+
+.hybrid {
+  color: green;
+  border: 2px solid green;
+  padding: 5px 15px;
+  border-radius: 5px;
+  max-width: 75px;
+  text-align: center; }
+
+.sativa {
+  color: orange;
+  border: 2px solid orange;
+  padding: 5px 15px;
+  border-radius: 5px;
+  max-width: 75px;
+  text-align: center; }
+
+.indica {
+  color: purple;
+  border: 2px solid purple;
+  padding: 5px 15px;
+  border-radius: 5px;
+  max-width: 75px;
+  text-align: center; }
+
+.page-view.homepage {
+  background-color: #e5e5e5; }
+  .page-view.homepage .first-row {
+    position: relative; }
+    .page-view.homepage .first-row .background {
+      position: absolute;
+      z-index: 9;
+      height: 50vh;
+      width: 100vw;
+      background-image: url("https://xshyfc.com/wp-content/uploads/data/2018/2/20/Weed-Plants-Wallpaperweed-plants-wallpaper-1920x1080-720p-PIC-WPXH350425.jpg"); }
+      .page-view.homepage .first-row .background:after {
+        content: '';
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        opacity: 0.8; }
+      .page-view.homepage .first-row .background .image img {
+        height: 100%;
+        width: 100%; }
+    .page-view.homepage .first-row .content {
+      position: relative;
+      height: 50vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      z-index: 99;
+      color: white;
+      width: 85%;
+      margin: 0 auto;
+      text-align: center; }
+      .page-view.homepage .first-row .content h1 {
+        color: white;
+        font-size: 3em;
+        font-family: "Montserrat", sans-serif; }
+      .page-view.homepage .first-row .content p {
+        color: white;
+        width: 50%;
+        margin: 0 auto;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        font-size: 1.5em;
+        font-family: "Muli", sans-serif; }
+  .page-view.homepage .second-row {
+    width: 100%;
+    background-color: #e5e5e5;
+    padding-top: 1em;
+    padding-bottom: 1em; }
+    .page-view.homepage .second-row ul {
+      display: flex;
+      justify-content: center; }
+      .page-view.homepage .second-row ul li {
+        margin-left: 2em;
+        margin-right: 2em; }
+        .page-view.homepage .second-row ul li:nth-child(1) {
+          margin-left: 0px; }
+        .page-view.homepage .second-row ul li:nth-last-child(1) {
+          margin-right: 0px; }
+        .page-view.homepage .second-row ul li a {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          width: 55px; }
+          .page-view.homepage .second-row ul li a i {
+            color: #00AF87;
+            font-size: 4em; }
+          .page-view.homepage .second-row ul li a p {
+            color: #00AF87;
+            font-size: 1.2em;
+            font-family: "Muli", sans-serif; }
+  .page-view.homepage .title-and-view-all {
+    display: flex;
+    justify-content: space-between; }
+    .page-view.homepage .title-and-view-all h5 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.5em; }
+    .page-view.homepage .title-and-view-all a {
+      color: #2397da;
+      font-size: 1em;
+      font-family: "Muli", sans-serif;
+      padding-right: 2%; }
+  .page-view.homepage .third-row.categories {
+    width: 90%;
+    margin-left: 10%;
+    padding-top: 2em;
+    padding-bottom: 2em; }
+    .page-view.homepage .third-row.categories .categories-wrapper {
+      display: flex;
+      flex-wrap: wrap; }
+      .page-view.homepage .third-row.categories .categories-wrapper a {
+        width: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-family: "Muli", sans-serif;
+        font-weight: 700;
+        font-size: 1.5em;
+        margin-left: 1%;
+        margin-right: 1%;
+        margin-bottom: 1%;
+        margin-top: 1%;
+        background-color: grey;
+        min-height: 125px; }
+        .page-view.homepage .third-row.categories .categories-wrapper a:nth-child(1) {
+          margin-left: 0px; }
+        .page-view.homepage .third-row.categories .categories-wrapper a:nth-child(5) {
+          margin-left: 0px; }
+  .page-view.homepage .carousels {
+    padding-bottom: 3em; }
+    .page-view.homepage .carousels .carousel-navigation {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px; }
+      .page-view.homepage .carousels .carousel-navigation div {
+        background-color: white;
+        padding: 10px 20px;
+        border: 1px solid grey;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Muli", sans-serif;
+        font-size: 2em;
+        text-transform: uppercase; }
+        .page-view.homepage .carousels .carousel-navigation div:hover {
+          cursor: pointer; }
+      .page-view.homepage .carousels .carousel-navigation .previous {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px; }
+      .page-view.homepage .carousels .carousel-navigation .next {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px; }
+    .page-view.homepage .carousels .swiper-container .swiper-wrapper .swiper-slide {
+      background-color: white;
+      text-align: center;
+      min-height: 504px; }
+      .page-view.homepage .carousels .swiper-container .swiper-wrapper .swiper-slide .product-info .product-title .product-name {
+        padding-top: 10px; }
+        .page-view.homepage .carousels .swiper-container .swiper-wrapper .swiper-slide .product-info .product-title .product-name a h5 {
+          font-family: "Montserrat", sans-serif;
+          font-size: 2em;
+          width: 50%;
+          margin: 0 auto;
+          text-align: center; }
+      .page-view.homepage .carousels .swiper-container .swiper-wrapper .swiper-slide .product-info .product-title .product-brand h5 {
+        text-align: center;
+        font-family: "Muli", sans-serif; }
+        .page-view.homepage .carousels .swiper-container .swiper-wrapper .swiper-slide .product-info .product-title .product-brand h5 a {
+          color: #2397da; }
+      .page-view.homepage .carousels .swiper-container .swiper-wrapper .swiper-slide .product-info .product-title .category {
+        padding-bottom: 15px; }
+        .page-view.homepage .carousels .swiper-container .swiper-wrapper .swiper-slide .product-info .product-title .category span {
+          font-size: 1.2em;
+          font-family: "Muli", sans-serif; }
+      .page-view.homepage .carousels .swiper-container .swiper-wrapper .swiper-slide .product-info .product-title .type {
+        padding-bottom: 20px; }
+      .page-view.homepage .carousels .swiper-container .swiper-wrapper .swiper-slide .product-info .product-title .product-image a img {
+        max-width: 125px; }
+      .page-view.homepage .carousels .swiper-container .swiper-wrapper .swiper-slide .product-info .product-info-under-title .brand-and-type {
+        color: black; }
+        .page-view.homepage .carousels .swiper-container .swiper-wrapper .swiper-slide .product-info .product-info-under-title .brand-and-type .mini-title {
+          color: black;
+          font-family: "Muli", sans-serif;
+          font-weight: 700;
+          padding-right: 10px;
+          font-size: 1.2em; }
+      .page-view.homepage .carousels .swiper-container .swiper-wrapper .swiper-slide .product-info .product-info-under-title .score {
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 20px;
+        padding-bottom: 20px; }
+        .page-view.homepage .carousels .swiper-container .swiper-wrapper .swiper-slide .product-info .product-info-under-title .score .mini-title {
+          display: none; }
+        .page-view.homepage .carousels .swiper-container .swiper-wrapper .swiper-slide .product-info .product-info-under-title .score .review-box {
+          width: 50%; }
+          .page-view.homepage .carousels .swiper-container .swiper-wrapper .swiper-slide .product-info .product-info-under-title .score .review-box .critic .top .image img, .page-view.homepage .carousels .swiper-container .swiper-wrapper .swiper-slide .product-info .product-info-under-title .score .review-box .user .top .image img {
+            max-width: 50px; }
+
+.page-view.products {
+  background-color: #e5e5e5;
+  padding-top: 50px;
+  min-height: 100vh; }
+  .page-view.products .filter-button {
+    color: grey;
+    border: 2px solid grey;
+    padding: 5px 15px;
+    border-radius: 5px;
+    max-width: 75px;
+    text-align: center; }
+  .page-view.products .hover-button:hover {
+    cursor: pointer; }
+  .page-view.products .button-filter-type.active-filter {
+    font-weight: 900; }
+  .page-view.products .panels {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto; }
+    .page-view.products .panels .location {
+      width: 100%; }
+    .page-view.products .panels .left-panel {
+      width: 25%;
+      background-color: white;
+      min-height: 100vh;
+      padding-top: 1em;
+      padding-bottom: 1em;
+      padding-left: 2em; }
+      .page-view.products .panels .left-panel h5.title {
+        font-family: "Montserrat", sans-serif;
+        color: grey;
+        font-size: 1.2em; }
+      .page-view.products .panels .left-panel h5.filter-title {
+        font-family: "Montserrat", sans-serif;
+        color: grey;
+        font-size: 1.1em;
+        padding-bottom: 1em;
+        padding-top: 1em; }
+      .page-view.products .panels .left-panel .filter-search {
+        margin-top: 2em; }
+        .page-view.products .panels .left-panel .filter-search span {
+          border: 2px solid blue;
+          padding: 5px 15px;
+          border-radius: 5px;
+          color: blue; }
+          .page-view.products .panels .left-panel .filter-search span:hover {
+            cursor: pointer; }
+    .page-view.products .panels .right-panel {
+      width: 70%;
+      margin-left: 2.5%;
+      position: relative;
+      min-height: 100vh; }
+      .page-view.products .panels .right-panel .loader-wrapper {
+        position: absolute;
+        height: 100%;
+        width: 100%; }
+      .page-view.products .panels .right-panel ul {
+        z-index: 9999;
+        position: relative;
+        background-color: #e5e5e5; }
+        .page-view.products .panels .right-panel ul li.product {
+          background-color: white;
+          display: flex;
+          border: 1px solid black;
+          margin-bottom: 0.35em;
+          padding-top: 1em; }
+          .page-view.products .panels .right-panel ul li.product .product-image {
+            width: 200px;
+            padding-left: 2em;
+            padding-right: 2em; }
+            .page-view.products .panels .right-panel ul li.product .product-image a {
+              display: block;
+              display: flex;
+              align-items: center; }
+            .page-view.products .panels .right-panel ul li.product .product-image img {
+              width: 100%; }
+          .page-view.products .panels .right-panel ul li.product .product-info {
+            width: calc(100% - 200px);
+            flex-wrap: wrap; }
+            .page-view.products .panels .right-panel ul li.product .product-info .product-title {
+              width: 100%; }
+              .page-view.products .panels .right-panel ul li.product .product-info .product-title .product-name a h5 {
+                font-size: 1.7em;
+                text-transform: uppercase;
+                font-family: "Montserrat", sans-serif; }
+              .page-view.products .panels .right-panel ul li.product .product-info .product-title .product-brand h5 {
+                padding-bottom: 10px; }
+                .page-view.products .panels .right-panel ul li.product .product-info .product-title .product-brand h5 a {
+                  color: #338eec; }
+                  .page-view.products .panels .right-panel ul li.product .product-info .product-title .product-brand h5 a:hover {
+                    color: #00AF87; }
+            .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title {
+              display: flex;
+              width: 100%; }
+              .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel {
+                width: 33%; }
+                .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel .mini-title {
+                  color: black;
+                  font-family: "Muli", sans-serif;
+                  font-weight: 800;
+                  font-size: 1.1em;
+                  padding-right: 20px; }
+                .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel.package {
+                  position: relative; }
+                  .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel.package:after {
+                    content: '';
+                    position: absolute;
+                    right: 50px;
+                    height: 100%;
+                    width: 1px;
+                    background-color: black;
+                    top: 0px; }
+                .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel.brand-and-type {
+                  position: relative; }
+                  .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel.brand-and-type:after {
+                    content: '';
+                    position: absolute;
+                    right: 50px;
+                    height: 100%;
+                    width: 1px;
+                    background-color: black;
+                    top: 0px; }
+                  .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel.brand-and-type p.plant-type {
+                    margin-bottom: 10px; }
+                  .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel.brand-and-type p.thc {
+                    color: black; }
+                  .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel.brand-and-type p.cbd {
+                    color: black; }
+                .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel.score {
+                  display: flex; }
+                  .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel.score .user-reviews {
+                    padding-right: 2em; }
+                  .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel.score .top {
+                    display: flex;
+                    padding-top: 15px; }
+                    .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel.score .top .image img {
+                      max-width: 50px;
+                      padding-right: 0.3em; }
+                    .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel.score .top p {
+                      display: flex;
+                      align-items: center;
+                      font-family: "Montserrat", sans-serif;
+                      color: black;
+                      font-weight: 600;
+                      font-size: 2em; }
+                  .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel.score .bottom {
+                    padding-top: 5px; }
+                    .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel.score .bottom p {
+                      text-align: center;
+                      font-family: "Muli", sans-serif;
+                      color: black; }
+                  .page-view.products .panels .right-panel ul li.product .product-info .product-info-under-title .panel.score .mini-title {
+                    display: none; }
