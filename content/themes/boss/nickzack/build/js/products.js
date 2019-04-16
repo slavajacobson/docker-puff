@@ -28,16 +28,34 @@ new Vue({
     filterResults(){
       this.getPosts(this.filterList);
     },
-    getPosts(filters){
-      if(filters =='none'){
+    getPosts(filters,preFilter){
+      
+      //normal page refresh load
+      if(filters =='none' && preFilter === undefined){
+        console.log(preFilter);
       axios.get('/wp-json/product/all-products').then(response => {
         this.posts = response.data;
-        //console.log(response.data);
-        
+
       }).catch(e =>{
         this.errors.push(e);
       })
     }
+    //prefilter is active (probably from homepage)
+    else if(preFilter !== undefined){
+      var filterName = preFilter[0];
+      var filter = preFilter[1];
+      axios.get('/wp-json/product/all-products').then(response => {
+        let postsToFilter = response.data;
+        for(product of postsToFilter){
+          if(product[filterName].toLowerCase() === filter.toLowerCase()){
+            this.posts.push(product);
+          }
+        }
+      }).catch(e =>{
+        this.errors.push(e);
+      })
+    }
+    //filters selected
     else{
       this.posts = [];
       this.pages = [];
@@ -117,12 +135,43 @@ new Vue({
     },
     watch: {
         posts () {
+
             this.setPages();
         }
     },
     created () {
-        this.getPosts('none');
-        
+        //check if there is a prefilter already
+        var getUrlParameter = function getUrlParameter(sParam) {
+            var sPageURL = window.location.search.substring(1),
+                sURLVariables = sPageURL.split('&'),
+                sParameterName,
+                i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+                }
+            }
+        }
+        let typePreFilter = getUrlParameter('type');
+        let categoryPreFilter = getUrlParameter('category');
+
+        if(typePreFilter !== undefined || categoryPreFilter !== undefined){
+          if(typePreFilter !== undefined){
+            //set pre filter array [parentName,filterName]
+              var preFilter = ['plantType',typePreFilter];
+              this.getPosts('none',preFilter);
+          }
+          else if(categoryPreFilter !== undefined){
+              var preFilter = ['plantCategory',categoryPreFilter];
+              this.getPosts('none',preFilter);
+          }
+        }
+        else{
+          this.getPosts('none');
+        }
     },
     filters:{
       lowercase: function(value){

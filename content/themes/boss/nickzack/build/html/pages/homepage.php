@@ -51,22 +51,22 @@
 			<a href = '#'>
 				Highest THC
 			</a>
-			<a href = '#'>
+			<a href = '/products?category=flower'>
 				Flowers
 			</a>
-			<a href = '#'>
+			<a href = '/products?category=oil-and-capsules'>
 				Oils and Capsules
 			</a>
-			<a href = '#'>
+			<a href = '/products?category=pre-roll'>
 				PreRolls
 			</a>
-			<a href = '#'>
+			<a href = '/products?type=sativa'>
 				Sativas
 			</a>
-			<a href = '#'>
+			<a href = '/products?type=indica'>
 				Indicas
 			</a>
-			<a href = '#'>
+			<a href = '/products?type=hybrid'>
 				Hybrids
 			</a>
 			<a href = '#'>
