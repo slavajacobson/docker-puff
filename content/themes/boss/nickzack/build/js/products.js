@@ -16,6 +16,12 @@ new Vue({
     }
   },
   methods:{
+    imageNotLoaded: function(event){
+        let thisImage = $(event.target);
+        thisImage.attr('src','http://placehold.it/200x200');
+
+        
+      },
     filter(filterType,filter,event,typeOfFilter){
       let target = $(event.target);
       if(!target.hasClass("active-filter") && typeOfFilter === 'button'){

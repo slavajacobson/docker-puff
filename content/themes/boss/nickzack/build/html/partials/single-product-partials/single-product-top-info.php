@@ -118,3 +118,20 @@
 
 
 
+<?php
+
+
+$comments = get_comments($postID);
+foreach($comments as $comment){
+	?>
+	<div>
+		<?php
+			$commentID = $comment -> comment_ID;
+			$commentMeta = get_comment_meta($commentID);
+			$commentLiked = $commentMeta['_commentliked'][0];
+			echo $commentLiked;
+		?>
+	</div>
+	<?php
+}
+?>

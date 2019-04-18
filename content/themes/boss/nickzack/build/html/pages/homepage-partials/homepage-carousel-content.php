@@ -17,7 +17,7 @@
 		</div>
 		<div class = 'product-image'>
 			<a :href = "product.link">
-				<img :src = 'product.product_images[0]'>
+				<img :src = 'product.product_images[0]' @error="imageNotLoaded($event)">
 			</a>
 		</div>
 	</div>

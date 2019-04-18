@@ -3,23 +3,27 @@
 
 
 
-
+// todo
+// find out how to update repeater fields
+// fix images not uploading with the new api
 
 
 //get product data from seperate spreadsheet api
-$json_string = 'https://spreadsheets.google.com/feeds/list/1Rbjg1BgUuDON1QPWDPYlAxeMY5NzM7Nb5Q1XYmKo4Y4/1/public/values?alt=json';
-$jsondata = file_get_contents($json_string);
-$obj = json_decode($jsondata,true);
-$products = $obj['feed']['entry'];
+function parse_all_products($case){
+$productsParsed = array();
+$productsAPI = 'https://spreadsheets.google.com/feeds/list/1-r3kfSxUiLScFZNaddJA_HRqJPF7h5O_HOKDYAIpJEc/3/public/values?alt=json';
+$productJsonData = file_get_contents($productsAPI);
+$productObject = json_decode($productJsonData,true);
+$products = $productObject['feed']['entry'];
 
-
-$counter = 0;
-
+$SKUAPI = 'https://spreadsheets.google.com/feeds/list/1-r3kfSxUiLScFZNaddJA_HRqJPF7h5O_HOKDYAIpJEc/2/public/values?alt=json';
+$SKUAPI = file_get_contents($SKUAPI);
+$SKUObject = json_decode($SKUAPI,true);
+$SKUS = $SKUObject['feed']['entry'];
 $productsArray = [];
-foreach($products as $product){
-    //test only one
-    $counter++;
-    if($counter < 19){
+
+//parse informatiom in the json from the google sheet into an array with all the required fields for the new product.. then depending on what the number $case is set to, create that many products and add them into the custom post type and the database with the fields that got generated.. all products from the json file are stores in $productsParsed. if you set $case to -1 it will go through every single one and add them. If you set it to a different number, it will only go through that many and add them in (for testing)..
+    foreach($products as $product){
         $image1 = $product['gsx$image1']['$t'];
         $image2 = $product['gsx$image2']['$t'];
         $image3 = $product['gsx$image3']['$t'];
@@ -28,32 +32,68 @@ foreach($products as $product){
         $vendorName = $product['gsx$vendor']['$t'];
         $plantType = $product['gsx$planttype']['$t'];
         $subCategory = $product['gsx$subcategory']['$t'];
-        $CBD = $product['gsx$cbd']['$t'];
-        $CBDMax = $product['gsx$cbd-max']['$t'];
-        $THC = $product['gsx$thc']['$t'];
-        $THCMax = $product['gsx$thc']['$t'];
+        $CBD = $product['gsx$cbd-full']['$t'];
+        $THC = $product['gsx$thc-full']['$t'];
         $brandID = $product['gsx$brandid']['$t'];
-        $slug = strtolower($product['gsx$_cn6ca']['$t']);
+        $excerpt = $product['gsx$body']['$t'];
+        $slug = strtolower($product['gsx$ignore']['$t']);
         $slug = str_replace(' ','-',$slug);
-        $brandPost = get_post($brandID);
-
+        $productID = $product['gsx$productid']['$t'];
+        $brandID = $product['gsx$brandid']['$t'];
         $productArray = array(
-            'name' => $productName,
-            'vendorName' => $vendorName,
-            'plantType' => $plantType,
-            'subCategory' => $subCategory,
-            'CBD' => $CBD,
-            'CBDMax' => $CBDMax,
-            'THC' => $THC,
-            'THCMax' => $THCMax,
-            'brandID' => $brandID,
-            'slug' => $slug,
-            'brandPost' => $brandPost,
-            'images' => $images
-        );
-        array_push($productsArray,$productArray);
+                    'name' => $productName,
+                    'vendorName' => $vendorName,
+                    'plantType' => $plantType,
+                    'subCategory' => $subCategory,
+                    'CBD' => $CBD,
+                    'THC' => $THC,
+                    'excerpt' => $excerpt,
+                    'slug' => $slug,
+                    'productID' => $productID,
+                    'images' => $images,
+                    'brandID' => $brandID,
+                    'variations' => array()
+                );
+        $variations = array();
+        //go through SKU json data
+        foreach($SKUS as $SKU){
+        $storeID = $SKU['gsx$storeid']['$t'];
+        $sku = $SKU['gsx$skuid']['$t'];
+        $productSize = $SKU['gsx$productpagesize']['$t'];
+        $SKUProductID = $SKU['gsx$productid']['$t'];
+        $productPrice = $SKU['gsx$productpageprice']['$t'];
+        $productStock = $SKU['gsx$productpagestock']['$t'];
+            if($productID == $SKUProductID){
+                $productVariation = array(
+                    'sku' => $sku,
+                    'store_id' => $storeID,
+                    'product_size' => $productSize,
+                    'product_price' => $productPrice,
+                    'product_stock' => $productStock
+
+                );      
+                array_push($productArray['variations'],$productVariation);          
+                
+            }
+        }
+        $finalProductArray = $productArray;
+        array_push($productsParsed,$finalProductArray);
+
+    }
+
+if($case != -1){
+    for($x = 0;$x != $case; $x++){
+        create_wordpress_post_with_code($productsParsed[$x]);
     }
 }
+else{
+    foreach($productsParsed as $product){
+        create_wordpress_post_with_code($product);
+    }
+}
+}
+
+
 
 function create_wordpress_post_with_code($product) {
     $productName = $product['name'];
@@ -66,7 +106,9 @@ function create_wordpress_post_with_code($product) {
     $productTHCMax = $product['THCMax'];
     $productBrandID = $product['brandID'];
     $productSlug = $product['slug'];
-    $productBrandPost = $product['brandPost'];
+    $productExcerpt = $product['excerpt'];
+    $productBrandPost = get_post($productBrandID);
+    $productVariations = $product['variations'];
     $images = $product['images'];
     $counter = 0;
     $wordpressImages = [];
@@ -143,7 +185,7 @@ function create_wordpress_post_with_code($product) {
         $author_id = 1;
         $slug = $productSlug;
         $title = $productName;
-        $content = 'Product Test content';
+        $content = $productExcerpt;
 
         //ACF FIELDS
         // Cheks if doen't exists a post with slug "wordpress-post-created-with-code".
@@ -173,9 +215,20 @@ function create_wordpress_post_with_code($product) {
              update_field('brand_relationship',$productBrandPost,$post_id);
              update_field('plant_type',$productPlantType,$post_id);
              update_field('category',$productSubCategory,$post_id);
-
+             foreach($productVariations as $variation){
+                 // save a repeater field value
+                $field_key = "variations";
+                $value = array(
+                        "sku"   => $variation['sku'],
+                        "store_id"   => $variation['store_id'],
+                        "product_size"   => $variation['product_size'],
+                        "product_price"   => $variation['product_price'],
+                        "product_stock"   => $variation['product_stock']
+                    );
+               
+                add_row( $field_key, $value, $post_id );
+             }
              for($counter = 1;$counter !=4;$counter++){
-                $urlFile = get_template_directory() .'/nickzack/product-pics/' .$productSlug . '-image-'.$counter.'.png';
                 $urlFile = get_template_directory_uri() .'/nickzack/product-pics/' .$productSlug . '-image-'.$counter.'.png';
                 update_field('image_'.$counter,$urlFile,$post_id);
              }
@@ -184,8 +237,7 @@ function create_wordpress_post_with_code($product) {
              // update_field('image_2',$wordpressImages[1],$post_id);
              // update_field('image_3',$wordpressImages[2],$post_id);
         } else {
-     
-                // Set pos_id to -2 becouse there is a post with this slug.
+
                 $post_id = -2;
          
         } // end if
@@ -216,11 +268,4 @@ function post_exists_by_slug( $post_slug ) {
 
 
 
-function add_products_to_database($productsArray){
- 
-foreach($productsArray as $product){
-    create_wordpress_post_with_code($product);
-    }
-}
-
-//add_products_to_database($productsArray);
+//parse_all_products('13');

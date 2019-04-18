@@ -7,9 +7,16 @@ new Vue({
     }
   },
   methods:{
+    imageNotLoaded: function(event){
+        let thisImage = $(event.target);
+        thisImage.attr('src','http://placehold.it/150x150');
+
+        
+      },
     getPosts(){
       axios.get('/wp-json/carousel/all-carousels').then(response => {
         this.newestPosts = response.data[0].newest;
+        console.log(this.newestPosts);
         let parentThis = this;
         setTimeout(function(){parentThis.swipeItUp();},1000)
         
@@ -68,6 +75,7 @@ new Vue({
         }
         return amountOfReviews;
       }
+
     }
 })
 })

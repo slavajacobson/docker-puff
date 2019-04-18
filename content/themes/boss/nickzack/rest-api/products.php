@@ -31,6 +31,7 @@ function return_products($data){
           $productBrandRelationship = get_field('brand_relationship',$post);
           $brandPost = get_post($productBrandID);
           $brandURL = get_permalink($brandPost);
+          $variations = get_field('variations',$post);
      	//THC
      	$THC = get_field('thc',$post);
      	//CBD
@@ -185,7 +186,8 @@ function return_products($data){
      	'CBD' => $CBD,
      	'package' => $package,
           'post_id' => $postID,
-          'reviewData' => $reviewData
+          'reviewData' => $reviewData,
+          'variations' => $variations
      );
      }
 
@@ -204,7 +206,8 @@ function return_products($data){
           'THC' => $THC,
           'CBD' => $CBD,
           'post_id' => $postID,
-          'reviewData' => 0
+          'reviewData' => 0,
+          'variations' => $variations
      );
      }
      array_push($data,$finalArray);

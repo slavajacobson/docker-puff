@@ -38,13 +38,14 @@
 			<li v-for="product in displayedPosts" class = 'product' :data-type = 'product.plantType | lowercase'>
 				<div class = 'product-image'>
 					<a :href = "product.link">
-						<img :src = 'product.product_images[0]'>
+						<img :src = 'product.product_images[0]' @error="imageNotLoaded($event)">
 					</a>
 				</div>
 				<div class = 'product-info'>
 					<div class = 'product-title'>
 						<div class = 'product-name'>
 							<a :href = "product.link"><h5>{{product.name}}</h5></a>
+							<p>{{product.plantCategory}}</p>
 						</div>
 						<div class = 'product-brand'>
 							<h5>By <a :href ="product.brandLink">{{product.productBrandRelationship[0]['post_title']}}</a></h5>
