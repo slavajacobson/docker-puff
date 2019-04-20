@@ -1,0 +1,18 @@
+FROM wordpress:php7.2-fpm
+
+WORKDIR '/site'
+
+#RUN docker-php-ext-install sockets
+RUN apt update
+
+RUN apt install ruby-full -y
+RUN gem install bundler --no-ri --no-rdoc
+
+
+
+RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+RUN chmod +x wp-cli.phar
+RUN mv wp-cli.phar /usr/local/bin/wp
+
+
+

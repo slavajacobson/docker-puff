@@ -216,6 +216,9 @@ function sassStyles() {
 }
 add_action( 'wp_enqueue_scripts', 'sassStyles' );
 
+// echo "HI";
+// die();
+
 //most viewed posts
 function setPostViews($postID) {
     $countKey = 'post_views_count';

@@ -29,4 +29,4 @@ DEPENDENCIES
   capistrano-git-with-submodules (= 2.0.3)
 
 BUNDLED WITH
-   1.16.4
+   1.17.2
