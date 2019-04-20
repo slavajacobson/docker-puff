@@ -1,10 +1,25 @@
-sudo: required
-services:
-  - docker
+# sudo: required
+# services:
+#   - docker
 
-before_install:
-  - docker build -t slavajacobson/docker-puff -f Dockerfile.dev .
+# before_install:
+#   - docker build -t slavajacobson/docker-puff -f Dockerfile.dev .
 
 
-script:
-  - docker run slavajacobson/docker-puff
+# script:
+#   - docker run slavajacobson/docker-puff
+
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-west-2"
+  name: "puff-docker"
+  env: "PuffDocker-env"
+  bucket_name: "elasticbeanstalk-us-west-2-624000441842"
+  bucket_path: "puff-docker"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: 
+    secure: "$AWS_ACCESS_KEY"
+
