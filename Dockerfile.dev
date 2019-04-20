@@ -8,6 +8,7 @@ RUN apt update
 RUN apt install ruby-full -y
 RUN gem install bundler --no-ri --no-rdoc
 
+EXPOSE 80
 
 
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
