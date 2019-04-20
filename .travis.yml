@@ -6,8 +6,8 @@ before_install:
   - docker build -t slavajacobson/docker-puff -f Dockerfile.dev .
 
 
-# script:
-#   - docker run slavajacobson/docker-puff
+script:
+  - echo "skipping tests"
 
 
 deploy:
